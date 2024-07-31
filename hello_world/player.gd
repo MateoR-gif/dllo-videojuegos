@@ -1,6 +1,7 @@
 extends Area2D
+signal hit
 
-@export var speed = 400
+@export var speed = 100
 var screen_size
 
 func _ready():
@@ -41,3 +42,20 @@ func _process(delta):
 	elif velocity.y != 0:
 		$AnimatedSprite2D.animation = "up"
 		$AnimatedSprite2D.flip_v = velocity.y > 0
+
+
+func _on_body_entered(body):
+	hide() # Desaparece el personaje al ser golpeado
+	# Se emite una señal cuando el personaje es golpeado
+	hit.emit()
+	# El siguiente desabilita la colisión del personaje para que no se detecte
+	# más de una vez.
+	
+# script para reiniciar el juego
+func start(pos):
+	position = pos
+	show() # Muestra el personaje
+	$CollisionShape2D.disabled = false # Rehabilita las colisiones
+	
+
+	$CollisionShape2D.set_deferred("disabled", true)
