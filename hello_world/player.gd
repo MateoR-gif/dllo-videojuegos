@@ -1,7 +1,8 @@
 extends Area2D
 signal hit
 
-@export var speed = 100
+@export var speed = 500
+var time = 20
 var screen_size
 
 func _ready():
@@ -10,6 +11,7 @@ func _ready():
 
 func _process(delta):
 	var velocity = Vector2.ZERO
+	
 	if Input.is_action_pressed("move_right"):
 		velocity.x += 1
 	if Input.is_action_pressed("move_left"):
@@ -18,6 +20,21 @@ func _process(delta):
 		velocity.y += 1
 	if Input.is_action_pressed("move_up"):
 		velocity.y -= 1
+	if Input.is_action_just_pressed("left_clic_action"):
+		if speed < 0:
+			speed -= 500
+		else:
+			speed += 500
+		print("Velocidad actual: ", speed)
+	if Input.is_action_just_released("left_clic_action"):
+		speed = 500
+		print("Velocidad actual: ", speed)
+	if Input.is_action_just_pressed("right_clic_action"):
+		speed -= speed + speed
+		print("Velocidad actual: ", speed)
+	if Input.is_action_just_released("right_clic_action"):
+		speed = 500
+		print("Velocidad actual: ", speed)
 
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * speed
@@ -43,6 +60,14 @@ func _process(delta):
 		$AnimatedSprite2D.animation = "up"
 		$AnimatedSprite2D.flip_v = velocity.y > 0
 
+
+func handleTime():
+	
+	if time >= 0:
+		time -= 1
+		print(time)	
+	else:
+		time = 20
 
 func _on_body_entered(body):
 	hide() # Desaparece el personaje al ser golpeado
