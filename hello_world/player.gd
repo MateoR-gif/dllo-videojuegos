@@ -50,6 +50,9 @@ func _process(delta):
 		$AnimatedSprite2D.animation = "walk"
 		$AnimatedSprite2D.flip_v = false
 		$AnimatedSprite2D.flip_h = velocity.x < 0
+		$"AnimatedSprite2D-Mariel".animation = "walk"
+		$"AnimatedSprite2D-Mariel".flip_v = false
+		$"AnimatedSprite2D-Mariel".flip_h = velocity.x < 0
 		# Línea 33 Alternativa a:
 		#	if velocity.x < 0:
 		#		$AnimatedSprite2D.flip_h = true

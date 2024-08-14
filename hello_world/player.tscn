@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://igyo4nfdysd8"]
+[gd_scene load_steps=10 format=3 uid="uid://igyo4nfdysd8"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_5q1o8"]
 [ext_resource type="Texture2D" uid="uid://40rex6ufqmor" path="res://player_up1.png" id="2_wdjis"]
 [ext_resource type="Texture2D" uid="uid://btfno7sui3ldm" path="res://player_up2.png" id="3_j8xal"]
 [ext_resource type="Texture2D" uid="uid://c0s5ecex3dtji" path="res://player_walk1.png" id="4_uh78a"]
 [ext_resource type="Texture2D" uid="uid://dl043q0qib0wq" path="res://player_walk2.png" id="5_udfu1"]
+[ext_resource type="Texture2D" uid="uid://d0ah2vds2aido" path="res://pixil-frame-0.png" id="6_geyr6"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_u1qc1"]
 animations = [{
@@ -35,6 +36,17 @@ animations = [{
 radius = 27.0
 height = 70.0
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_g6eji"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_geyr6")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
 [node name="Player" type="Area2D"]
 script = ExtResource("1_5q1o8")
 
@@ -45,5 +57,12 @@ animation = &"walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_2xa6m")
+
+[node name="AnimatedSprite2D-Mariel" type="AnimatedSprite2D" parent="."]
+position = Vector2(-102, 4)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_g6eji")
+animation = &"walk"
+flip_h = true
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
