@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dfg448gfmftsx"]
+[gd_scene load_steps=13 format=3 uid="uid://dfg448gfmftsx"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_5q1o8"]
 [ext_resource type="Texture2D" uid="uid://40rex6ufqmor" path="res://player_up1.png" id="2_wdjis"]
@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://c0s5ecex3dtji" path="res://player_walk1.png" id="4_uh78a"]
 [ext_resource type="Texture2D" uid="uid://dl043q0qib0wq" path="res://player_walk2.png" id="5_udfu1"]
 [ext_resource type="Texture2D" uid="uid://y816vyx1piq2" path="res://pixil-frame-0.png" id="6_geyr6"]
+[ext_resource type="Texture2D" uid="uid://itbdhabo1c0o" path="res://camilo_movimiento.png" id="7_86tmh"]
+[ext_resource type="Texture2D" uid="uid://6gadu4ralcil" path="res://camilo_quieto.png" id="8_wfy1g"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_u1qc1"]
 animations = [{
@@ -47,6 +49,20 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_nb1hw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_86tmh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_wfy1g")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
 [node name="Player" type="Area2D"]
 script = ExtResource("1_5q1o8")
 
@@ -59,10 +75,16 @@ animation = &"walk"
 shape = SubResource("CapsuleShape2D_2xa6m")
 
 [node name="AnimatedSprite2D-Mariel" type="AnimatedSprite2D" parent="."]
-position = Vector2(-153, -34)
+position = Vector2(-113, 3)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_g6eji")
 animation = &"walk"
 flip_h = true
+
+[node name="AnimatedSprite2D-Camilo" type="AnimatedSprite2D" parent="."]
+position = Vector2(115, 3)
+scale = Vector2(0.05, 0.05)
+sprite_frames = SubResource("SpriteFrames_nb1hw")
+animation = &"walk"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

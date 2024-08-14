@@ -39,8 +39,10 @@ func _process(delta):
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * speed
 		$AnimatedSprite2D.play()
+		$"AnimatedSprite2D-Camilo".play()
 	else:
 		$AnimatedSprite2D.stop()
+		$"AnimatedSprite2D-Camilo".stop()
 		
 	position += velocity * delta
 	#La función clamp no permite que el personaje se salga de la pantalla
@@ -50,6 +52,9 @@ func _process(delta):
 		$AnimatedSprite2D.animation = "walk"
 		$AnimatedSprite2D.flip_v = false
 		$AnimatedSprite2D.flip_h = velocity.x < 0
+		$"AnimatedSprite2D-Camilo".animation = "walk"
+		$"AnimatedSprite2D-Camilo".flip_v = false
+		$"AnimatedSprite2D-Camilo".flip_h = velocity.x < 0
 		$"AnimatedSprite2D-Mariel".animation = "walk"
 		$"AnimatedSprite2D-Mariel".flip_v = false
 		$"AnimatedSprite2D-Mariel".flip_h = velocity.x < 0
