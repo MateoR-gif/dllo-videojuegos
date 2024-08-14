@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dfg448gfmftsx"]
+[gd_scene load_steps=16 format=3 uid="uid://dfg448gfmftsx"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_5q1o8"]
 [ext_resource type="Texture2D" uid="uid://40rex6ufqmor" path="res://player_up1.png" id="2_wdjis"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dl043q0qib0wq" path="res://player_walk2.png" id="5_udfu1"]
 [ext_resource type="Texture2D" uid="uid://y816vyx1piq2" path="res://pixil-frame-0.png" id="6_geyr6"]
 [ext_resource type="Texture2D" uid="uid://itbdhabo1c0o" path="res://camilo_movimiento.png" id="7_86tmh"]
+[ext_resource type="Texture2D" uid="uid://bbep30d1klmts" path="res://pixil-frame-1.png" id="7_wq7pm"]
 [ext_resource type="Texture2D" uid="uid://6gadu4ralcil" path="res://camilo_quieto.png" id="8_wfy1g"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_u1qc1"]
@@ -43,11 +44,17 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("6_geyr6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_wq7pm")
 }],
 "loop": true,
 "name": &"walk",
 "speed": 5.0
 }]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_m8lh8"]
+radius = 33.0151
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nb1hw"]
 animations = [{
@@ -63,6 +70,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pgkjv"]
+size = Vector2(50, 78)
+
 [node name="Player" type="Area2D"]
 script = ExtResource("1_5q1o8")
 
@@ -75,16 +85,24 @@ animation = &"walk"
 shape = SubResource("CapsuleShape2D_2xa6m")
 
 [node name="AnimatedSprite2D-Mariel" type="AnimatedSprite2D" parent="."]
-position = Vector2(-113, 3)
+position = Vector2(-82, 4)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_g6eji")
 animation = &"walk"
 flip_h = true
 
+[node name="CollisionShape2D-Mariel" type="CollisionShape2D" parent="."]
+position = Vector2(-81, 4)
+shape = SubResource("CircleShape2D_m8lh8")
+
 [node name="AnimatedSprite2D-Camilo" type="AnimatedSprite2D" parent="."]
-position = Vector2(115, 3)
-scale = Vector2(0.05, 0.05)
+position = Vector2(73, 2.38419e-07)
+scale = Vector2(0.05, 0.052)
 sprite_frames = SubResource("SpriteFrames_nb1hw")
 animation = &"walk"
+
+[node name="CollisionShape2D-Camilo" type="CollisionShape2D" parent="."]
+position = Vector2(78, -3)
+shape = SubResource("RectangleShape2D_pgkjv")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

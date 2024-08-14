@@ -39,9 +39,11 @@ func _process(delta):
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * speed
 		$AnimatedSprite2D.play()
+		$'AnimatedSprite2D-Mariel'.play()
 		$"AnimatedSprite2D-Camilo".play()
 	else:
 		$AnimatedSprite2D.stop()
+		$"AnimatedSprite2D-Mariel".stop()
 		$"AnimatedSprite2D-Camilo".stop()
 		
 	position += velocity * delta
