@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 [gd_scene load_steps=19 format=3 uid="uid://dfg448gfmftsx"]
+=======
+[gd_scene load_steps=17 format=3 uid="uid://dfg448gfmftsx"]
+>>>>>>> d09f1168b8a07d1a422ecdb2b009a9b97d2e1b20
 
 [ext_resource type="Script" path="res://player.gd" id="1_5q1o8"]
 [ext_resource type="Texture2D" uid="uid://40rex6ufqmor" path="res://player_up1.png" id="2_wdjis"]
@@ -9,8 +13,12 @@
 [ext_resource type="Texture2D" uid="uid://itbdhabo1c0o" path="res://camilo_movimiento.png" id="7_86tmh"]
 [ext_resource type="Texture2D" uid="uid://bbep30d1klmts" path="res://pixil-frame-1.png" id="7_wq7pm"]
 [ext_resource type="Texture2D" uid="uid://6gadu4ralcil" path="res://camilo_quieto.png" id="8_wfy1g"]
+<<<<<<< HEAD
 [ext_resource type="Texture2D" uid="uid://bgvoro6soakt1" path="res://fish.png" id="10_01vgt"]
 [ext_resource type="Script" path="res://fish_sprite.gd" id="11_pjm8f"]
+=======
+[ext_resource type="Script" path="res://countdown_timer.gd" id="10_kic5y"]
+>>>>>>> d09f1168b8a07d1a422ecdb2b009a9b97d2e1b20
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_u1qc1"]
 animations = [{
@@ -112,6 +120,7 @@ animation = &"walk"
 position = Vector2(78, -3)
 shape = SubResource("RectangleShape2D_pgkjv")
 
+<<<<<<< HEAD
 [node name="fishSprite" type="Sprite2D" parent="Player"]
 position = Vector2(1, 63)
 texture = ExtResource("10_01vgt")
@@ -121,5 +130,42 @@ script = ExtResource("11_pjm8f")
 position = Vector2(-4.17233e-07, 63)
 scale = Vector2(31.7385, 3.59389)
 shape = SubResource("RectangleShape2D_xyd55")
+=======
+[node name="CountdownTimer" type="Node" parent="."]
+script = ExtResource("10_kic5y")
+
+[node name="Timer" type="Timer" parent="CountdownTimer"]
+wait_time = 15.0
+one_shot = true
+
+[node name="Label-countdown" type="Label" parent="CountdownTimer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -51.0
+offset_right = 51.0
+offset_bottom = 55.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 40
+text = "00:00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label-lose" type="Label" parent="CountdownTimer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -11.5
+offset_right = 32.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.988235, 0.243137, 0, 1)
+theme_override_font_sizes/font_size = 80
+text = "Perdiste"
+>>>>>>> d09f1168b8a07d1a422ecdb2b009a9b97d2e1b20
 
 [connection signal="body_entered" from="Player" to="Player" method="_on_body_entered"]
