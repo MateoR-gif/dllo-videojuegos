@@ -8,6 +8,15 @@ var screen_size
 func _ready():
 	# hide() # Oculta el personaje
 	screen_size = get_viewport_rect().size # Almacena el tamaño de la pantalla
+	
+	# Se actualiza posición inicial
+	$"AnimatedSprite2D-Mariel".position = Vector2(45, 45)
+	$"CollisionShape2D-Mariel".position = Vector2(45, 45)
+	$AnimatedSprite2D.position = Vector2(115,45)
+	$CollisionShape2D.position = Vector2(115,45)
+	$"AnimatedSprite2D-Camilo".position = Vector2(185, 45)
+	$"CollisionShape2D-Camilo".position = Vector2(185, 45)
+
 
 func _process(delta):
 	var velocity = Vector2.ZERO
