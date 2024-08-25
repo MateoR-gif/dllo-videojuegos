@@ -5,8 +5,12 @@ signal hit
 var time = 20
 var screen_size
 var sprite_size
+var umbral = 100
+var score = 0
+
 func _ready():
 	# hide() # Oculta el personaje
+	
 	screen_size = get_viewport_rect().size # Almacena el tamaño de la pantalla
 	sprite_size = $AnimatedSprite2D # Obtiene el tamaño del sprite
 	
@@ -19,10 +23,17 @@ func _ready():
 	$"CollisionShape2D-Camilo".position = Vector2(185, 45)
 	
 
-
 func _process(delta):
+	var fish = get_node("Collectable/Fish2D")
+	var timer = get_node("CountdownTimer/Timer")
 	var velocity = Vector2.ZERO
+	var distancia = position.distance_to(fish.position)
 	
+	if distancia < umbral:
+		fish.set_randomly()
+		score += 1
+		timer.start(timer.time_left + 0.05)
+
 	if Input.is_action_pressed("move_right"):
 		velocity.x += 1
 	if Input.is_action_pressed("move_left"):
