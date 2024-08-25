@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://dfg448gfmftsx"]
+[gd_scene load_steps=19 format=3 uid="uid://dfg448gfmftsx"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_5q1o8"]
 [ext_resource type="Texture2D" uid="uid://40rex6ufqmor" path="res://player_up1.png" id="2_wdjis"]
@@ -75,6 +75,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pgkjv"]
 size = Vector2(50, 78)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xyd55"]
+size = Vector2(0.756179, 4.15675)
+
 [node name="Main" type="Node2D"]
 
 [node name="Player" type="Area2D" parent="."]
@@ -109,12 +112,14 @@ animation = &"walk"
 position = Vector2(78, -3)
 shape = SubResource("RectangleShape2D_pgkjv")
 
-[node name="CollectableContainer" type="Node" parent="."]
-
-[node name="Collectable1" type="Node" parent="CollectableContainer"]
-
-[node name="fishSprite" type="Sprite2D" parent="CollectableContainer/Collectable1"]
+[node name="fishSprite" type="Sprite2D" parent="Player"]
+position = Vector2(1, 63)
 texture = ExtResource("10_01vgt")
 script = ExtResource("11_pjm8f")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Player"]
+position = Vector2(-4.17233e-07, 63)
+scale = Vector2(31.7385, 3.59389)
+shape = SubResource("RectangleShape2D_xyd55")
 
 [connection signal="body_entered" from="Player" to="Player" method="_on_body_entered"]

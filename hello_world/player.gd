@@ -1,10 +1,10 @@
 extends Area2D
 
-var timer = preload("res://main.tscn")
 @export var speed = 500
 var time = 20
 var screen_size
 var sprite_size
+
 func _ready():
 	# hide() # Oculta el personaje
 	screen_size = get_viewport_rect().size # Almacena el tamaño de la pantalla
@@ -82,20 +82,6 @@ func _process(delta):
 		$AnimatedSprite2D.animation = "up"
 		$AnimatedSprite2D.flip_v = velocity.y > 0
 
-
-func handleTime():
-	
-	if time >= 0:
-		time -= 1
-		print(time)	
-	else:
-		time = 20
-			
 # script para reiniciar el juego
 func start(pos):
 	position = pos
-	show() # Muestra el personaje
-	$CollisionShape2D.disabled = false # Rehabilita las colisiones
-	
-
-	$CollisionShape2D.set_deferred("disabled", true)
