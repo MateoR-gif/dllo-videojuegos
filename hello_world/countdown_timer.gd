@@ -14,11 +14,12 @@ func time_left_to_live():
 	var minute = floor(time_left / 60)
 	var second = int(time_left) % 60
 	return [minute,second]
-
-func add_time():
-	timer.time_left += 10
 	
 func _process(delta):
+	var padre = get_parent()
+	var abuelo = padre.get_parent()
+	var player = abuelo.get_node("Player")
+	
 	if timer.time_left > 0:
 		countdownLabel.text = "%02d:%02d" % time_left_to_live()
 		
@@ -28,5 +29,6 @@ func _process(delta):
 			countdownLabel.add_theme_color_override("font_color", Color(1, 1, 1)) 
 	else:
 		countdownLabel.visible = false
+		loseLabel.text = "Puntaje: " + str(player.score)
 		loseLabel.visible = true
 		get_tree().paused = true

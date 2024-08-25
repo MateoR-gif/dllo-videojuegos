@@ -6,6 +6,7 @@ var time = 20
 var screen_size
 var sprite_size
 var umbral = 100
+var score = 0
 
 func _ready():
 	# hide() # Oculta el personaje
@@ -30,6 +31,7 @@ func _process(delta):
 	
 	if distancia < umbral:
 		fish.set_randomly()
+		score += 1
 		timer.start(timer.time_left + 0.05)
 
 	if Input.is_action_pressed("move_right"):
