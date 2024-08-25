@@ -113,7 +113,6 @@ shape = SubResource("RectangleShape2D_pgkjv")
 [node name="Collectable" type="Node" parent="Player"]
 
 [node name="Fish2D" type="Sprite2D" parent="Player/Collectable"]
-position = Vector2(1, 94)
 texture = ExtResource("12_0sh0w")
 script = ExtResource("12_dtinx")
 
