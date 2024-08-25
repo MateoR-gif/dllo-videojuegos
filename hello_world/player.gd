@@ -5,6 +5,8 @@ signal hit
 var time = 20
 var screen_size
 var sprite_size
+
+
 func _ready():
 	# hide() # Oculta el personaje
 	screen_size = get_viewport_rect().size # Almacena el tamaño de la pantalla

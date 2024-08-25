@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dfg448gfmftsx"]
+[gd_scene load_steps=19 format=3 uid="uid://dfg448gfmftsx"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_5q1o8"]
 [ext_resource type="Texture2D" uid="uid://40rex6ufqmor" path="res://player_up1.png" id="2_wdjis"]
@@ -10,6 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://bbep30d1klmts" path="res://pixil-frame-1.png" id="7_wq7pm"]
 [ext_resource type="Texture2D" uid="uid://6gadu4ralcil" path="res://camilo_quieto.png" id="8_wfy1g"]
 [ext_resource type="Script" path="res://countdown_timer.gd" id="10_kic5y"]
+[ext_resource type="Texture2D" uid="uid://buyxgxl46e82q" path="res://fish.png" id="12_0sh0w"]
+[ext_resource type="Script" path="res://fish_2d.gd" id="12_dtinx"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_u1qc1"]
 animations = [{
@@ -107,6 +109,13 @@ animation = &"walk"
 [node name="CollisionShape2D-Camilo" type="CollisionShape2D" parent="Player"]
 position = Vector2(78, -3)
 shape = SubResource("RectangleShape2D_pgkjv")
+
+[node name="Collectable" type="Node" parent="Player"]
+
+[node name="Fish2D" type="Sprite2D" parent="Player/Collectable"]
+position = Vector2(1, 94)
+texture = ExtResource("12_0sh0w")
+script = ExtResource("12_dtinx")
 
 [node name="CountdownTimer" type="Node" parent="."]
 script = ExtResource("10_kic5y")
