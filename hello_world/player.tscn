@@ -112,8 +112,10 @@ shape = SubResource("RectangleShape2D_pgkjv")
 script = ExtResource("10_kic5y")
 
 [node name="Timer" type="Timer" parent="CountdownTimer"]
+wait_time = 5.0
+one_shot = true
 
-[node name="Label" type="Label" parent="CountdownTimer"]
+[node name="Label-countdown" type="Label" parent="CountdownTimer"]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -125,5 +127,22 @@ theme_override_font_sizes/font_size = 40
 text = "00:00"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Label-lose" type="Label" parent="CountdownTimer"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -11.5
+offset_right = 32.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.988235, 0.243137, 0, 1)
+theme_override_font_sizes/font_size = 80
+text = "Perdiste"
 
 [connection signal="body_entered" from="Player" to="Player" method="_on_body_entered"]
