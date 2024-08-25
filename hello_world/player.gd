@@ -4,10 +4,11 @@ signal hit
 @export var speed = 500
 var time = 20
 var screen_size
-
+var sprite_size
 func _ready():
 	# hide() # Oculta el personaje
 	screen_size = get_viewport_rect().size # Almacena el tamaño de la pantalla
+	sprite_size = $AnimatedSprite2D # Obtiene el tamaño del sprite
 	
 	# Se actualiza posición inicial
 	$"AnimatedSprite2D-Mariel".position = Vector2(45, 45)
@@ -16,6 +17,7 @@ func _ready():
 	$CollisionShape2D.position = Vector2(115,45)
 	$"AnimatedSprite2D-Camilo".position = Vector2(185, 45)
 	$"CollisionShape2D-Camilo".position = Vector2(185, 45)
+	
 
 
 func _process(delta):
@@ -57,7 +59,8 @@ func _process(delta):
 		
 	position += velocity * delta
 	#La función clamp no permite que el personaje se salga de la pantalla
-	position = position.clamp(Vector2.ZERO, screen_size) 
+	# Se resta con la posición del primer personaje para evitar que salga de la pantalla
+	position = position.clamp(Vector2.ZERO, screen_size - $"AnimatedSprite2D-Camilo".position)
 	
 	if velocity.x != 0:
 		$AnimatedSprite2D.animation = "walk"
