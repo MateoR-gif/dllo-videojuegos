@@ -112,7 +112,7 @@ shape = SubResource("RectangleShape2D_pgkjv")
 script = ExtResource("10_kic5y")
 
 [node name="Timer" type="Timer" parent="CountdownTimer"]
-wait_time = 5.0
+wait_time = 15.0
 one_shot = true
 
 [node name="Label-countdown" type="Label" parent="CountdownTimer"]
@@ -129,7 +129,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Label-lose" type="Label" parent="CountdownTimer"]
-visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
