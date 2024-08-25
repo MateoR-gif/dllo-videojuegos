@@ -5,7 +5,6 @@ signal hit
 var time = 20
 var screen_size
 var sprite_size
-
 func _ready():
 	# hide() # Oculta el personaje
 	screen_size = get_viewport_rect().size # Almacena el tamaño de la pantalla
@@ -83,8 +82,6 @@ func _process(delta):
 		$AnimatedSprite2D.animation = "up"
 		$AnimatedSprite2D.flip_v = velocity.y > 0
 
-<<<<<<< HEAD
-=======
 
 func handleTime():
 	
@@ -101,7 +98,11 @@ func _on_body_entered(body):
 	# El siguiente desabilita la colisión del personaje para que no se detecte
 	# más de una vez.
 	
->>>>>>> parent of 4c1ea80 (Random fish position added)
 # script para reiniciar el juego
 func start(pos):
 	position = pos
+	show() # Muestra el personaje
+	$CollisionShape2D.disabled = false # Rehabilita las colisiones
+	
+
+	$CollisionShape2D.set_deferred("disabled", true)
