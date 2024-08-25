@@ -1,9 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://bvx12pvlgwetu"]
-
-[ext_resource type="Script" path="res://timer.gd" id="1_kot88"]
-
-[node name="Node2D" type="Node2D"]
-
-[node name="Timer" type="Timer" parent="."]
-autostart = true
-script = ExtResource("1_kot88")

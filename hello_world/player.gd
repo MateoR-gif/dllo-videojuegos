@@ -1,4 +1,5 @@
 extends Area2D
+signal hit
 
 @export var speed = 500
 var time = 20
@@ -82,6 +83,25 @@ func _process(delta):
 		$AnimatedSprite2D.animation = "up"
 		$AnimatedSprite2D.flip_v = velocity.y > 0
 
+<<<<<<< HEAD
+=======
+
+func handleTime():
+	
+	if time >= 0:
+		time -= 1
+		print(time)	
+	else:
+		time = 20
+
+func _on_body_entered(body):
+	hide() # Desaparece el personaje al ser golpeado
+	# Se emite una señal cuando el personaje es golpeado
+	hit.emit()
+	# El siguiente desabilita la colisión del personaje para que no se detecte
+	# más de una vez.
+	
+>>>>>>> parent of 4c1ea80 (Random fish position added)
 # script para reiniciar el juego
 func start(pos):
 	position = pos
