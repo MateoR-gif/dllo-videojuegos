@@ -1,14 +1,9 @@
 extends Timer
 
+var fish = preload("res://fish.tscn")
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-	
 func _on_timer_timeout():
-	print("Timeout")
+	randomize()
+	var fish = fish.instance()
+	fish.position = Vector2(randf_range(10,998),randf_range(10,998))
+	add_child(fish)

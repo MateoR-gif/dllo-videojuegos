@@ -1,6 +1,6 @@
 extends Area2D
-signal hit
 
+var timer = preload("res://main.tscn")
 @export var speed = 500
 var time = 20
 var screen_size
@@ -90,14 +90,7 @@ func handleTime():
 		print(time)	
 	else:
 		time = 20
-
-func _on_body_entered(body):
-	hide() # Desaparece el personaje al ser golpeado
-	# Se emite una señal cuando el personaje es golpeado
-	hit.emit()
-	# El siguiente desabilita la colisión del personaje para que no se detecte
-	# más de una vez.
-	
+			
 # script para reiniciar el juego
 func start(pos):
 	position = pos
