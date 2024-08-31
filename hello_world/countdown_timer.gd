@@ -18,7 +18,7 @@ func time_left_to_live():
 func _process(delta):
 	var padre = get_parent()
 	var abuelo = padre.get_parent()
-	var player = abuelo.get_node("Player")
+	var player = abuelo
 	
 	if timer.time_left > 0:
 		countdownLabel.text = "%02d:%02d" % time_left_to_live()

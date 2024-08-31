@@ -1,6 +1,5 @@
-[gd_scene load_steps=20 format=3 uid="uid://dfg448gfmftsx"]
+[gd_scene load_steps=22 format=3 uid="uid://dfg448gfmftsx"]
 
-[ext_resource type="Script" path="res://player.gd" id="1_5q1o8"]
 [ext_resource type="Texture2D" uid="uid://40rex6ufqmor" path="res://player_up1.png" id="2_wdjis"]
 [ext_resource type="Texture2D" uid="uid://btfno7sui3ldm" path="res://player_up2.png" id="3_j8xal"]
 [ext_resource type="Texture2D" uid="uid://c0s5ecex3dtji" path="res://player_walk1.png" id="4_uh78a"]
@@ -8,11 +7,14 @@
 [ext_resource type="Texture2D" uid="uid://y816vyx1piq2" path="res://pixil-frame-0.png" id="6_geyr6"]
 [ext_resource type="Texture2D" uid="uid://itbdhabo1c0o" path="res://camilo_movimiento.png" id="7_86tmh"]
 [ext_resource type="Texture2D" uid="uid://bbep30d1klmts" path="res://pixil-frame-1.png" id="7_wq7pm"]
-[ext_resource type="Texture2D" uid="uid://b7tuoisfo26sn" path="res://personaje_camilo_quieto.png" id="9_50hjw"]
+[ext_resource type="Texture2D" uid="uid://b7tuoisfo26sn" path="res://personaje_camilo_quieto.png" id="9_1egk8"]
 [ext_resource type="Script" path="res://countdown_timer.gd" id="10_kic5y"]
 [ext_resource type="Texture2D" uid="uid://buyxgxl46e82q" path="res://fish.png" id="12_0sh0w"]
 [ext_resource type="Script" path="res://player2.gd" id="12_57008"]
 [ext_resource type="Script" path="res://fish_2d.gd" id="12_dtinx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x0voj"]
+size = Vector2(1163, 54)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_u1qc1"]
 animations = [{
@@ -67,7 +69,7 @@ animations = [{
 "texture": ExtResource("7_86tmh")
 }, {
 "duration": 1.0,
-"texture": ExtResource("9_50hjw")
+"texture": ExtResource("9_1egk8")
 }],
 "loop": true,
 "name": &"walk",
@@ -77,54 +79,70 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pgkjv"]
 size = Vector2(50, 78)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4wt7a"]
+size = Vector2(50, 78)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a60g8"]
+
 [node name="Node2D" type="Node2D"]
 
-[node name="Player" type="Area2D" parent="."]
-script = ExtResource("1_5q1o8")
+[node name="Suelo" type="StaticBody2D" parent="."]
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
+[node name="ColorRect" type="ColorRect" parent="Suelo"]
+offset_left = 5.0
+offset_top = 598.0
+offset_right = 1156.0
+offset_bottom = 641.0
+color = Color(0.426216, 0.769642, 0.440666, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Suelo"]
+position = Vector2(584, 618)
+shape = SubResource("RectangleShape2D_x0voj")
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="."]
+position = Vector2(984, 546)
+script = ExtResource("12_57008")
+is_player2 = true
+
+[node name="Player2" type="Area2D" parent="CharacterBody2D2"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D2/Player2"]
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_u1qc1")
 animation = &"walk"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D2/Player2"]
 shape = SubResource("CapsuleShape2D_2xa6m")
 
-[node name="AnimatedSprite2D-Mariel" type="AnimatedSprite2D" parent="Player"]
+[node name="AnimatedSprite2D-Mariel" type="AnimatedSprite2D" parent="CharacterBody2D2/Player2"]
 position = Vector2(-82, 4)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_g6eji")
 animation = &"walk"
 flip_h = true
 
-[node name="CollisionShape2D-Mariel" type="CollisionShape2D" parent="Player"]
+[node name="CollisionShape2D-Mariel" type="CollisionShape2D" parent="CharacterBody2D2/Player2"]
 position = Vector2(-81, 4)
 shape = SubResource("CircleShape2D_m8lh8")
 
-[node name="AnimatedSprite2D-Camilo" type="AnimatedSprite2D" parent="Player"]
+[node name="AnimatedSprite2D-Camilo" type="AnimatedSprite2D" parent="CharacterBody2D2/Player2"]
 position = Vector2(73, 2.38419e-07)
 scale = Vector2(0.05, 0.052)
 sprite_frames = SubResource("SpriteFrames_nb1hw")
 animation = &"walk"
 
-[node name="CollisionShape2D-Camilo" type="CollisionShape2D" parent="Player"]
+[node name="CollisionShape2D-Camilo" type="CollisionShape2D" parent="CharacterBody2D2/Player2"]
 position = Vector2(78, -3)
 shape = SubResource("RectangleShape2D_pgkjv")
 
-[node name="Collectable" type="Node" parent="Player"]
-
-[node name="Fish2D" type="Sprite2D" parent="Player/Collectable"]
-texture = ExtResource("12_0sh0w")
-script = ExtResource("12_dtinx")
-
-[node name="CountdownTimer" type="Node" parent="Player"]
+[node name="CountdownTimer" type="Node" parent="CharacterBody2D2/Player2"]
 script = ExtResource("10_kic5y")
 
-[node name="Timer" type="Timer" parent="Player/CountdownTimer"]
+[node name="Timer" type="Timer" parent="CharacterBody2D2/Player2/CountdownTimer"]
 wait_time = 15.0
 one_shot = true
 
-[node name="Label-countdown" type="Label" parent="Player/CountdownTimer"]
+[node name="Label-countdown" type="Label" parent="CharacterBody2D2/Player2/CountdownTimer"]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -137,7 +155,7 @@ text = "00:00"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label-lose" type="Label" parent="Player/CountdownTimer"]
+[node name="Label-lose" type="Label" parent="CharacterBody2D2/Player2/CountdownTimer"]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -153,54 +171,58 @@ theme_override_colors/font_color = Color(0.988235, 0.243137, 0, 1)
 theme_override_font_sizes/font_size = 80
 text = "Perdiste"
 
-[node name="Player2" type="Area2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D2"]
+position = Vector2(78, -3)
+shape = SubResource("RectangleShape2D_4wt7a")
+metadata/_edit_group_ = true
+
+[node name="JumpTimer" type="Timer" parent="CharacterBody2D2"]
+wait_time = 5.0
+one_shot = true
+
+[node name="CharacterBody2D1" type="CharacterBody2D" parent="."]
+position = Vector2(134, 546)
 script = ExtResource("12_57008")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player2"]
+[node name="Player2" type="Area2D" parent="CharacterBody2D1"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D1/Player2"]
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_u1qc1")
 animation = &"walk"
-metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D1/Player2"]
 shape = SubResource("CapsuleShape2D_2xa6m")
 
-[node name="AnimatedSprite2D-Mariel" type="AnimatedSprite2D" parent="Player2"]
+[node name="AnimatedSprite2D-Mariel" type="AnimatedSprite2D" parent="CharacterBody2D1/Player2"]
 position = Vector2(-82, 4)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_g6eji")
 animation = &"walk"
 flip_h = true
-metadata/_edit_group_ = true
 
-[node name="CollisionShape2D-Mariel" type="CollisionShape2D" parent="Player2"]
+[node name="CollisionShape2D-Mariel" type="CollisionShape2D" parent="CharacterBody2D1/Player2"]
 position = Vector2(-81, 4)
 shape = SubResource("CircleShape2D_m8lh8")
 
-[node name="AnimatedSprite2D-Camilo" type="AnimatedSprite2D" parent="Player2"]
-position = Vector2(250, 156)
+[node name="AnimatedSprite2D-Camilo" type="AnimatedSprite2D" parent="CharacterBody2D1/Player2"]
+position = Vector2(73, 2.38419e-07)
 scale = Vector2(0.05, 0.052)
 sprite_frames = SubResource("SpriteFrames_nb1hw")
 animation = &"walk"
 
-[node name="CollisionShape2D-Camilo" type="CollisionShape2D" parent="Player2"]
+[node name="CollisionShape2D-Camilo" type="CollisionShape2D" parent="CharacterBody2D1/Player2"]
 position = Vector2(78, -3)
 shape = SubResource("RectangleShape2D_pgkjv")
 
-[node name="Collectable" type="Node" parent="Player2"]
-
-[node name="Fish2D" type="Sprite2D" parent="Player2/Collectable"]
-texture = ExtResource("12_0sh0w")
-script = ExtResource("12_dtinx")
-
-[node name="CountdownTimer" type="Node" parent="Player2"]
+[node name="CountdownTimer" type="Node" parent="CharacterBody2D1/Player2"]
 script = ExtResource("10_kic5y")
 
-[node name="Timer" type="Timer" parent="Player2/CountdownTimer"]
+[node name="Timer" type="Timer" parent="CharacterBody2D1/Player2/CountdownTimer"]
 wait_time = 15.0
 one_shot = true
 
-[node name="Label-countdown" type="Label" parent="Player2/CountdownTimer"]
+[node name="Label-countdown" type="Label" parent="CharacterBody2D1/Player2/CountdownTimer"]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -213,7 +235,7 @@ text = "00:00"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label-lose" type="Label" parent="Player2/CountdownTimer"]
+[node name="Label-lose" type="Label" parent="CharacterBody2D1/Player2/CountdownTimer"]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -229,15 +251,21 @@ theme_override_colors/font_color = Color(0.988235, 0.243137, 0, 1)
 theme_override_font_sizes/font_size = 80
 text = "Perdiste"
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D1"]
+shape = SubResource("RectangleShape2D_a60g8")
 
-[node name="ColorRect" type="ColorRect" parent="StaticBody2D"]
-offset_left = -15.0
-offset_top = 606.0
-offset_right = 1165.0
-offset_bottom = 652.0
-color = Color(0.425919, 0.694896, 0.601712, 1)
-metadata/_edit_group_ = true
+[node name="JumpTimer" type="Timer" parent="CharacterBody2D1"]
+wait_time = 5.0
+one_shot = true
 
-[connection signal="body_entered" from="Player" to="Player" method="_on_body_entered"]
-[connection signal="body_entered" from="Player2" to="Player2" method="_on_body_entered"]
+[node name="Collectable" type="Node" parent="."]
+
+[node name="Fish2D" type="Sprite2D" parent="Collectable"]
+position = Vector2(0, 2)
+texture = ExtResource("12_0sh0w")
+script = ExtResource("12_dtinx")
+
+[connection signal="body_entered" from="CharacterBody2D2/Player2" to="CharacterBody2D2/Player2" method="_on_body_entered"]
+[connection signal="timeout" from="CharacterBody2D2/JumpTimer" to="CharacterBody2D2" method="_on_jump_timer_timeout"]
+[connection signal="body_entered" from="CharacterBody2D1/Player2" to="CharacterBody2D1/Player2" method="_on_body_entered"]
+[connection signal="timeout" from="CharacterBody2D1/JumpTimer" to="CharacterBody2D1" method="_on_jump_timer_timeout"]

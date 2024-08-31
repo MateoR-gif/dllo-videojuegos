@@ -12,15 +12,15 @@ func _ready():
 	# hide() # Oculta el personaje
 	
 	screen_size = get_viewport_rect().size # Almacena el tamaño de la pantalla
-	sprite_size = $AnimatedSprite2D # Obtiene el tamaño del sprite
+	#sprite_size = $AnimatedSprite2D # Obtiene el tamaño del sprite
 	
-	# Se actualiza posición inicial
-	$"AnimatedSprite2D-Mariel".position = Vector2(45, 45)
-	$"CollisionShape2D-Mariel".position = Vector2(45, 45)
-	$AnimatedSprite2D.position = Vector2(115,45)
-	$CollisionShape2D.position = Vector2(115,45)
-	$"AnimatedSprite2D-Camilo".position = Vector2(185, 45)
-	$"CollisionShape2D-Camilo".position = Vector2(185, 45)
+	## Se actualiza posición inicial
+	#$"Player2.AnimatedSprite2D-Mariel".position = Vector2(45, 45)
+	#$"Player2.CollisionShape2D-Mariel".position = Vector2(45, 45)
+	#$"Player2.AnimatedSprite2D".position = Vector2(115,45)
+	#$"Player2.CollisionShape2D".position = Vector2(115,45)
+	#$"Player2.AnimatedSprite2D-Camilo".position = Vector2(185, 45)
+	#$"Player2.CollisionShape2D-Camilo".position = Vector2(185, 45)
 	
 
 func _process(delta):
@@ -60,29 +60,29 @@ func _process(delta):
 
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * speed
-		$AnimatedSprite2D.play()
-		$'AnimatedSprite2D-Mariel'.play()
+		$"Player2/AnimatedSprite2D".play()
+		$"Player2/AnimatedSprite2D-Mariel".play()
 		$"AnimatedSprite2D-Camilo".play()
 	else:
-		$AnimatedSprite2D.stop()
-		$"AnimatedSprite2D-Mariel".stop()
-		$"AnimatedSprite2D-Camilo".stop()
+		$"Player2/AnimatedSprite2D".stop()
+		$"Player2/AnimatedSprite2D-Mariel".stop()
+		$"Player2/AnimatedSprite2D-Camilo".stop()
 		
-	position += velocity * delta
+	
 	#La función clamp no permite que el personaje se salga de la pantalla
 	# Se resta con la posición del primer personaje para evitar que salga de la pantalla
-	position = position.clamp(Vector2.ZERO, screen_size - $"AnimatedSprite2D-Camilo".position)
+	#position = position.clamp(Vector2.ZERO, screen_size - $"AnimatedSprite2D-Camilo".position)
 	
 	if velocity.x != 0:
 		$AnimatedSprite2D.animation = "walk"
 		$AnimatedSprite2D.flip_v = false
 		$AnimatedSprite2D.flip_h = velocity.x < 0
 		$"AnimatedSprite2D-Camilo".animation = "walk"
-		$"AnimatedSprite2D-Camilo".flip_v = false
-		$"AnimatedSprite2D-Camilo".flip_h = velocity.x < 0
+		#$"AnimatedSprite2D-Camilo".flip_v = false
+		#$"AnimatedSprite2D-Camilo".flip_h = velocity.x < 0
 		$"AnimatedSprite2D-Mariel".animation = "walk"
-		$"AnimatedSprite2D-Mariel".flip_v = false
-		$"AnimatedSprite2D-Mariel".flip_h = velocity.x < 0
+		#$"AnimatedSprite2D-Mariel".flip_v = false
+		#$"AnimatedSprite2D-Mariel".flip_h = velocity.x < 0
 		# Línea 33 Alternativa a:
 		#	if velocity.x < 0:
 		#		$AnimatedSprite2D.flip_h = true
@@ -113,7 +113,7 @@ func _on_body_entered(body):
 func start(pos):
 	position = pos
 	show() # Muestra el personaje
-	$CollisionShape2D.disabled = false # Rehabilita las colisiones
-	
-
-	$CollisionShape2D.set_deferred("disabled", true)
+	#$CollisionShape2D.disabled = false # Rehabilita las colisiones
+	#
+	#
+	#$CollisionShape2D.set_deferred("disabled", true)
