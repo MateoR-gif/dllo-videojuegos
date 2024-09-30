@@ -66,7 +66,7 @@ animations = [{
 "texture": ExtResource("7_86tmh")
 }, {
 "duration": 1.0,
-"texture": null
+"texture": ExtResource("7_86tmh")
 }],
 "loop": true,
 "name": &"walk",
