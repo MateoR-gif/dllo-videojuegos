@@ -24,14 +24,16 @@ func _ready():
 	
 
 func _process(delta):
-	var fish = get_node("Collectable/Fish2D")
-	var timer = get_node("CountdownTimer/Timer")
+	var collectable = get_node("Collectable/Collectable2D")
+	var scoreTable = get_node("CountdownTimer2")
+	var timer = get_node("CountdownTimer2/Timer")
 	var velocity = Vector2.ZERO
-	var distancia = position.distance_to(fish.position)
+	var distancia = position.distance_to(collectable.position)
 	
 	if distancia < umbral:
-		fish.set_randomly()
+		collectable.set_randomly()
 		score += 1
+		scoreTable.setScore()
 		timer.start(timer.time_left + 0.05)
 
 	if Input.is_action_pressed("move_right_player2"):
