@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=3 uid="uid://dfg448gfmftsx"]
+[gd_scene load_steps=63 format=3 uid="uid://dfg448gfmftsx"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_5q1o8"]
 [ext_resource type="Texture2D" uid="uid://dfuplo7f1x747" path="res://player_mateo_sprites/1pixil-frame-1.png" id="2_i6xea"]
@@ -35,6 +35,7 @@
 [ext_resource type="Texture2D" uid="uid://ch2wmt8wnvgao" path="res://parallax_assets/parallax-00.png" id="27_k4mdw"]
 [ext_resource type="Texture2D" uid="uid://bfs0xtl5ud16k" path="res://parallax_assets/parallax-01.png" id="28_fwms5"]
 [ext_resource type="Texture2D" uid="uid://dhool22ocxdth" path="res://parallax_assets/parallax-02.png" id="29_gaiyy"]
+[ext_resource type="Texture2D" uid="uid://6gadu4ralcil" path="res://camilo_quieto.png" id="30_2cdj3"]
 [ext_resource type="Texture2D" uid="uid://dleic35unu3k6" path="res://parallax_assets/parallax-03.png" id="30_sj88d"]
 [ext_resource type="Texture2D" uid="uid://bgoinh4ipxgs3" path="res://parallax_assets/parallax-04.png" id="31_nak4k"]
 
@@ -86,7 +87,16 @@ height = 70.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_g6eji"]
 animations = [{
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_4s8xx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_pbvdt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_i14kw")
+}],
 "loop": true,
 "name": &"new_animation",
 "speed": 5.0
@@ -301,6 +311,17 @@ animations = [{
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("30_2cdj3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_86tmh")
+}],
+"loop": true,
+"name": &"camiloquieto",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("7_86tmh")
 }, {
 "duration": 1.0,
@@ -451,7 +472,7 @@ shape = SubResource("CapsuleShape2D_2xa6m")
 position = Vector2(-83, 8)
 scale = Vector2(0.148828, 0.348958)
 sprite_frames = SubResource("SpriteFrames_g6eji")
-animation = &"walk"
+animation = &"new_animation"
 flip_h = true
 
 [node name="CollisionShape2D-Mariel" type="CollisionShape2D" parent="Player2"]
@@ -462,7 +483,7 @@ shape = SubResource("CircleShape2D_m8lh8")
 position = Vector2(79, -6)
 scale = Vector2(0.0368, 0.0381)
 sprite_frames = SubResource("SpriteFrames_nb1hw")
-animation = &"walk"
+animation = &"camiloquieto"
 
 [node name="CollisionShape2D-Camilo" type="CollisionShape2D" parent="Player2"]
 position = Vector2(78, -3)

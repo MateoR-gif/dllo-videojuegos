@@ -9,7 +9,8 @@ func _on_play_pressed():
 
 # Función para abrir las opciones (puedes implementar algo aquí)
 func _on_options_pressed():
-	print("Opciones presionadas - Función aún no implementada.")
+	get_tree().change_scene_to_file("res://menuoptions.tscn")
+	
 
 # Función para salir del juego
 func _on_quit_pressed():

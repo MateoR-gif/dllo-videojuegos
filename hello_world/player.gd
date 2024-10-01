@@ -79,7 +79,7 @@ func _process(delta):
 		$"AnimatedSprite2D-Camilo".play()
 	else:
 		$AnimatedSprite2D.play("default")
-		$"AnimatedSprite2D-Mariel".stop()
+		$"AnimatedSprite2D-Mariel".play("new_animation")
 		$"AnimatedSprite2D-Camilo".play("Walk")
 
 	position += velocity * delta
