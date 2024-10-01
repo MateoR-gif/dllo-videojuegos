@@ -512,7 +512,7 @@ libraries = {
 [node name="Parallax2D" type="Parallax2D" parent="ParallaxBackground"]
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Parallax2D"]
-position = Vector2(687, 396)
+position = Vector2(642, 364)
 rotation = 0.000885115
 scale = Vector2(1, 2.32222)
 texture = ExtResource("27_k4mdw")
@@ -527,7 +527,7 @@ texture = ExtResource("28_fwms5")
 [node name="Parallax2D3" type="Parallax2D" parent="ParallaxBackground"]
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Parallax2D3"]
-position = Vector2(638, 473)
+position = Vector2(650, 371)
 scale = Vector2(1, 2.32222)
 texture = ExtResource("29_gaiyy")
 
