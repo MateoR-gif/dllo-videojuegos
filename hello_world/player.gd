@@ -36,12 +36,16 @@ func _process(delta):
 
 	if Input.is_action_pressed("move_right"):
 		velocity.x += 1
+
 	if Input.is_action_pressed("move_left"):
 		velocity.x -= 1
+
 	if Input.is_action_pressed("move_down"):
 		velocity.y += 1
+
 	if Input.is_action_pressed("move_up"):
 		velocity.y -= 1
+		
 	if Input.is_action_just_pressed("left_clic_action"):
 		if speed < 0:
 			speed -= 500
@@ -66,7 +70,7 @@ func _process(delta):
 	else:
 		$AnimatedSprite2D.stop()
 		$"AnimatedSprite2D-Mariel".stop()
-		$"AnimatedSprite2D-Camilo".stop()
+		$"AnimatedSprite2D-Camilo".play("Walk")
 		
 	position += velocity * delta
 	#La función clamp no permite que el personaje se salga de la pantalla
@@ -77,7 +81,7 @@ func _process(delta):
 		$AnimatedSprite2D.animation = "walk"
 		$AnimatedSprite2D.flip_v = false
 		$AnimatedSprite2D.flip_h = velocity.x < 0
-		$"AnimatedSprite2D-Camilo".animation = "walk"
+		$"AnimatedSprite2D-Camilo".animation = "Run"
 		$"AnimatedSprite2D-Camilo".flip_v = false
 		$"AnimatedSprite2D-Camilo".flip_h = velocity.x < 0
 		$"AnimatedSprite2D-Mariel".animation = "walk"
@@ -91,7 +95,12 @@ func _process(delta):
 		
 	elif velocity.y != 0:
 		$AnimatedSprite2D.animation = "up"
+		$"AnimatedSprite2D-Camilo".animation = "Up"
 		$AnimatedSprite2D.flip_v = velocity.y > 0
+		
+	else:
+		$"AnimatedSprite2D-Camilo".animation = "Walk"
+		
 
 
 func handleTime():
