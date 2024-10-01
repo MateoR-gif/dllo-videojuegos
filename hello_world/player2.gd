@@ -68,8 +68,8 @@ func _process(delta):
 		$"AnimatedSprite2D-Camilo".play()
 	else:
 		$AnimatedSprite2D.play("default")
-		$"AnimatedSprite2D-Mariel".stop()
-		$"AnimatedSprite2D-Camilo".stop()
+		$"AnimatedSprite2D-Mariel".play("new_animation")
+		$"AnimatedSprite2D-Camilo".play("camiloquieto")
 
 	position += velocity * delta
 	#La función clamp no permite que el personaje se salga de la pantalla
