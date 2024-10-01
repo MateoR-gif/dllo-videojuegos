@@ -8,6 +8,8 @@ var sprite_size
 var umbral = 100
 var score = 0
 
+
+
 func _ready():
 	# hide() # Oculta el personaje
 	
@@ -27,15 +29,20 @@ func _process(delta):
 	var fish = get_node("Collectable/Fish2D")
 	var tableScore = get_node("CountdownTimer")
 	var timer = get_node("CountdownTimer/Timer")
+	var timer2 = get_node("Collectable/Timer")
+	var collectable = true
 	var velocity = Vector2.ZERO
 	var distancia = position.distance_to(fish.position)
 	
 	if distancia < umbral:
+		$Collectable/AnimationPlayer.play("pickup")
 		fish.set_randomly()
 		score += 1
 		tableScore.setScore()
-		timer.start(timer.time_left + 0.05)
-
+		var num = randf_range(0,1)
+		timer.start(timer.time_left + num)
+		$CountdownTimer/Label.text = "+ " + str(num)
+		
 	if Input.is_action_pressed("move_right"):
 		velocity.x += 1
 
@@ -104,6 +111,7 @@ func _process(delta):
 		$"AnimatedSprite2D-Camilo".animation = "Walk"
 		
 
+	
 
 func handleTime():
 	
