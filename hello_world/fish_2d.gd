@@ -7,6 +7,7 @@ func _ready() -> void:
 
 
 func set_randomly():
+	print("A")
 	var viewport_size = get_viewport_rect().size
 	var new_position = Vector2(
 		randf_range(0, viewport_size.x - texture.get_width()),
