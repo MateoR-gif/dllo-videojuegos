@@ -1,7 +1,8 @@
-[gd_scene load_steps=62 format=3 uid="uid://dfg448gfmftsx"]
+[gd_scene load_steps=52 format=3 uid="uid://dfg448gfmftsx"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_5q1o8"]
 [ext_resource type="Texture2D" uid="uid://dfuplo7f1x747" path="res://player_mateo_sprites/1pixil-frame-1.png" id="2_i6xea"]
+[ext_resource type="Texture2D" uid="uid://40rex6ufqmor" path="res://player_up1.png" id="2_wdjis"]
 [ext_resource type="Texture2D" uid="uid://c5t5bsgimggmr" path="res://player_mateo_sprites/pixil-frame-5.png" id="2_ysbo0"]
 [ext_resource type="Texture2D" uid="uid://cytesjck50ho" path="res://player_mateo_sprites/1pixil-frame-0.png" id="3_k8g5n"]
 [ext_resource type="Texture2D" uid="uid://4fcrio2kkym4" path="res://player_mateo_sprites/pixil-frame-6.png" id="3_komoo"]
@@ -17,21 +18,15 @@
 [ext_resource type="Texture2D" uid="uid://bp3tumqlmp1w8" path="res://player_mateo_sprites/pixil-frame-1.png" id="7_wq7pm"]
 [ext_resource type="Texture2D" uid="uid://dgch4112reqhq" path="res://player_mateo_sprites/1pixil-frame-3.png" id="8_h64ob"]
 [ext_resource type="Texture2D" uid="uid://dw04jkvu8gvtb" path="res://camilo-animation-removebg-preview.png" id="8_onmdk"]
-[ext_resource type="Texture2D" uid="uid://dp3yg7rne1lta" path="res://bunny_run-Sheet_1.png" id="9_4s8xx"]
 [ext_resource type="Texture2D" uid="uid://cth1njgxafy87" path="res://player_mateo_sprites/1pixil-frame-4.png" id="9_hq5l0"]
+[ext_resource type="Texture2D" uid="uid://y816vyx1piq2" path="res://pixil-frame-0.png" id="10_c6mjs"]
 [ext_resource type="Script" path="res://countdown_timer.gd" id="10_kic5y"]
-[ext_resource type="Texture2D" uid="uid://cm5g074xccfhi" path="res://bunny_run-Sheet_2.png" id="10_pbvdt"]
-[ext_resource type="Texture2D" uid="uid://duya6goo6r4x" path="res://bunny_run-Sheet_3.png" id="11_i14kw"]
+[ext_resource type="Texture2D" uid="uid://bbep30d1klmts" path="res://pixil-frame-1.png" id="11_pgc6l"]
 [ext_resource type="Texture2D" uid="uid://buyxgxl46e82q" path="res://fish.png" id="12_0sh0w"]
 [ext_resource type="Script" path="res://player2.gd" id="12_57008"]
-[ext_resource type="Texture2D" uid="uid://csm3ua16lfdvl" path="res://bunny_run-Sheet_4.png" id="12_cusqa"]
 [ext_resource type="Script" path="res://fish_2d.gd" id="12_dtinx"]
 [ext_resource type="Texture2D" uid="uid://cjxffmj2woyty" path="res://tortuga.png" id="13_3lkkg"]
-[ext_resource type="Texture2D" uid="uid://d07dy0eg78vlm" path="res://bunny_run-Sheet_5.png" id="13_rgdoq"]
-[ext_resource type="Texture2D" uid="uid://dnvudr6xpy6n5" path="res://bunny_run-Sheet_6.png" id="14_oqvgx"]
 [ext_resource type="Script" path="res://countdown_timer_2.gd" id="14_rkqqs"]
-[ext_resource type="Texture2D" uid="uid://desnmuj3nm54v" path="res://bunny_run-Sheet_7.png" id="15_2qcfn"]
-[ext_resource type="Texture2D" uid="uid://cb17q14pp213k" path="res://bunny_run-Sheet_8.png" id="16_l3fnv"]
 [ext_resource type="Texture2D" uid="uid://ch2wmt8wnvgao" path="res://parallax_assets/parallax-00.png" id="27_k4mdw"]
 [ext_resource type="Texture2D" uid="uid://bfs0xtl5ud16k" path="res://parallax_assets/parallax-01.png" id="28_fwms5"]
 [ext_resource type="Texture2D" uid="uid://dhool22ocxdth" path="res://parallax_assets/parallax-02.png" id="29_gaiyy"]
@@ -86,35 +81,12 @@ height = 70.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_g6eji"]
 animations = [{
-"frames": [],
-"loop": true,
-"name": &"new_animation",
-"speed": 5.0
-}, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("9_4s8xx")
+"texture": ExtResource("10_c6mjs")
 }, {
 "duration": 1.0,
-"texture": ExtResource("10_pbvdt")
-}, {
-"duration": 1.0,
-"texture": ExtResource("11_i14kw")
-}, {
-"duration": 1.0,
-"texture": ExtResource("12_cusqa")
-}, {
-"duration": 1.0,
-"texture": ExtResource("13_rgdoq")
-}, {
-"duration": 1.0,
-"texture": ExtResource("14_oqvgx")
-}, {
-"duration": 1.0,
-"texture": ExtResource("15_2qcfn")
-}, {
-"duration": 1.0,
-"texture": ExtResource("16_l3fnv")
+"texture": ExtResource("11_pgc6l")
 }],
 "loop": true,
 "name": &"walk",
@@ -122,7 +94,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_m8lh8"]
-radius = 49.0918
+radius = 33.0151
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fllpl"]
 atlas = ExtResource("8_onmdk")
@@ -220,40 +192,19 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pgkjv"]
 size = Vector2(50, 78)
 
-[sub_resource type="Animation" id="Animation_ru7rp"]
-length = 0.001
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Fish2D:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(-0.00753355, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-
-[sub_resource type="Animation" id="Animation_4r65i"]
-resource_name = "pickup"
-length = 0.5
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Fish2D:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0, 0, 0),
-"points": PackedFloat32Array(-0.0164058, -0.25, 0, 0.25, 0, 3.14462, -0.25, 0, 0.25, 0, 6.27458, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.233333, 0.466667)
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_08cnr"]
-_data = {
-"RESET": SubResource("Animation_ru7rp"),
-"pickup": SubResource("Animation_4r65i")
-}
+[sub_resource type="SpriteFrames" id="SpriteFrames_nwpir"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_0sh0w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_wdjis")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_u1qc1"]
 animations = [{
@@ -311,66 +262,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="Animation" id="Animation_w008u"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(456, 100)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0146379]
-}
-
-[sub_resource type="Animation" id="Animation_f2c3u"]
-resource_name = "new_animation"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.466667, 0.966667, 1),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [-0.00984275, 0.0146379, 0.0408671, 0.0262667]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.466667, 1),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(456, 100), Vector2(457.867, 116.333), Vector2(460, 135)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_5tn80"]
-_data = {
-"RESET": SubResource("Animation_w008u"),
-"t2": SubResource("Animation_f2c3u")
-}
-
 [node name="Node2D" type="Node2D"]
 
 [node name="Player" type="Area2D" parent="."]
@@ -384,14 +275,14 @@ sprite_frames = SubResource("SpriteFrames_n11kr")
 shape = SubResource("CapsuleShape2D_2xa6m")
 
 [node name="AnimatedSprite2D-Mariel" type="AnimatedSprite2D" parent="Player"]
-position = Vector2(-79, 6)
-scale = Vector2(0.158594, 0.276389)
+position = Vector2(-82, 4)
+scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_g6eji")
 animation = &"walk"
 flip_h = true
 
 [node name="CollisionShape2D-Mariel" type="CollisionShape2D" parent="Player"]
-position = Vector2(-80, -1)
+position = Vector2(-81, 4)
 shape = SubResource("CircleShape2D_m8lh8")
 
 [node name="AnimatedSprite2D-Camilo" type="AnimatedSprite2D" parent="Player"]
@@ -406,17 +297,11 @@ shape = SubResource("RectangleShape2D_pgkjv")
 
 [node name="Collectable" type="Node" parent="Player"]
 
-[node name="Fish2D" type="Sprite2D" parent="Player/Collectable"]
-position = Vector2(216, 216)
-rotation = -0.00753355
+[node name="Fish2D" type="AnimatedSprite2D" parent="Player/Collectable"]
+position = Vector2(416, 252)
 scale = Vector2(1.21, 1.15)
-texture = ExtResource("12_0sh0w")
+sprite_frames = SubResource("SpriteFrames_nwpir")
 script = ExtResource("12_dtinx")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Player/Collectable"]
-libraries = {
-"": SubResource("AnimationLibrary_08cnr")
-}
 
 [node name="CountdownTimer" type="Node" parent="Player"]
 script = ExtResource("10_kic5y")
@@ -454,32 +339,25 @@ theme_override_colors/font_color = Color(0.256871, 0.634534, 0.560577, 1)
 theme_override_font_sizes/font_size = 80
 text = "P1: 0"
 
-[node name="Label" type="Label" parent="Player/CountdownTimer"]
-offset_left = 505.0
-offset_top = 74.0
-offset_right = 545.0
-offset_bottom = 97.0
-
 [node name="Player2" type="Area2D" parent="."]
 position = Vector2(1030, 54)
 script = ExtResource("12_57008")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player2"]
 sprite_frames = SubResource("SpriteFrames_u1qc1")
-animation = &"walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player2"]
 shape = SubResource("CapsuleShape2D_2xa6m")
 
 [node name="AnimatedSprite2D-Mariel" type="AnimatedSprite2D" parent="Player2"]
-position = Vector2(-83, 8)
-scale = Vector2(0.148828, 0.348958)
+position = Vector2(-82, 4)
+scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_g6eji")
 animation = &"walk"
 flip_h = true
 
 [node name="CollisionShape2D-Mariel" type="CollisionShape2D" parent="Player2"]
-position = Vector2(-83, 8)
+position = Vector2(-81, 4)
 shape = SubResource("CircleShape2D_m8lh8")
 
 [node name="AnimatedSprite2D-Camilo" type="AnimatedSprite2D" parent="Player2"]
@@ -495,17 +373,9 @@ shape = SubResource("RectangleShape2D_pgkjv")
 [node name="Collectable" type="Node" parent="Player2"]
 
 [node name="Collectable2D" type="Sprite2D" parent="Player2/Collectable"]
-position = Vector2(456, 100)
-rotation = 0.0146379
-scale = Vector2(1.11182, 1.19899)
+position = Vector2(231, 109)
 texture = ExtResource("13_3lkkg")
 script = ExtResource("12_dtinx")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Player2/Collectable"]
-root_node = NodePath("../Collectable2D")
-libraries = {
-"": SubResource("AnimationLibrary_5tn80")
-}
 
 [node name="CountdownTimer2" type="Node" parent="Player2"]
 script = ExtResource("14_rkqqs")
@@ -535,36 +405,36 @@ text = "P2: 0"
 [node name="Parallax2D" type="Parallax2D" parent="ParallaxBackground"]
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Parallax2D"]
-position = Vector2(687, 396)
-rotation = 0.000885115
+position = Vector2(586, 342)
 scale = Vector2(1, 2.32222)
 texture = ExtResource("27_k4mdw")
 
 [node name="Parallax2D2" type="Parallax2D" parent="ParallaxBackground"]
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Parallax2D2"]
-position = Vector2(640, 331)
+position = Vector2(587, 342)
 scale = Vector2(1, 2.32222)
 texture = ExtResource("28_fwms5")
 
 [node name="Parallax2D3" type="Parallax2D" parent="ParallaxBackground"]
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Parallax2D3"]
-position = Vector2(638, 473)
+position = Vector2(587, 342)
 scale = Vector2(1, 2.32222)
 texture = ExtResource("29_gaiyy")
 
 [node name="Parallax2D4" type="Parallax2D" parent="ParallaxBackground"]
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Parallax2D4"]
-position = Vector2(357, 304)
+position = Vector2(577.5, 327)
 scale = Vector2(0.800694, 1.79444)
 texture = ExtResource("30_sj88d")
 
 [node name="Parallax2D5" type="Parallax2D" parent="ParallaxBackground"]
+scroll_offset = Vector2(62, 47)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Parallax2D5"]
-position = Vector2(557, 355)
+position = Vector2(621, 653.245)
 scale = Vector2(0.952778, 1.10642)
 texture = ExtResource("31_nak4k")
 
