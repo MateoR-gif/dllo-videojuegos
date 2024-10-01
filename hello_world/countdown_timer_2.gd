@@ -22,7 +22,5 @@ func time_left_to_live():
 func _process(delta):
 	if timer.time_left > 0:
 		pass
-	else:
-		
+	else:	
 		loseLabel.visible = true
-		get_tree().paused = true

@@ -3,6 +3,7 @@ extends Node
 @onready var countdownLabel = $"Label-countdown"
 @onready var loseLabel = $"Label-lose1"
 @onready var timer = $Timer
+@onready var addTimeLabel = $"Label"
 
 
 func _ready():
