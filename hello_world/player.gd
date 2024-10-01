@@ -70,7 +70,7 @@ func _process(delta):
 		$'AnimatedSprite2D-Mariel'.play()
 		$"AnimatedSprite2D-Camilo".play()
 	else:
-		$AnimatedSprite2D.stop()
+		$AnimatedSprite2D.play("default")
 		$"AnimatedSprite2D-Mariel".stop()
 		$"AnimatedSprite2D-Camilo".play("Walk")
 		
