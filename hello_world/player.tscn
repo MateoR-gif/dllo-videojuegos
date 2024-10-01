@@ -1,28 +1,59 @@
-[gd_scene load_steps=21 format=3 uid="uid://dfg448gfmftsx"]
+[gd_scene load_steps=50 format=3 uid="uid://dfg448gfmftsx"]
+
 [ext_resource type="Script" path="res://player.gd" id="1_5q1o8"]
-[ext_resource type="Texture2D" uid="uid://40rex6ufqmor" path="res://player_up1.png" id="2_wdjis"]
-[ext_resource type="Texture2D" uid="uid://btfno7sui3ldm" path="res://player_up2.png" id="3_j8xal"]
-[ext_resource type="Texture2D" uid="uid://c0s5ecex3dtji" path="res://player_walk1.png" id="4_uh78a"]
-[ext_resource type="Texture2D" uid="uid://dl043q0qib0wq" path="res://player_walk2.png" id="5_udfu1"]
-[ext_resource type="Texture2D" uid="uid://y816vyx1piq2" path="res://pixil-frame-0.png" id="6_geyr6"]
+[ext_resource type="Texture2D" uid="uid://dfuplo7f1x747" path="res://player_mateo_sprites/1pixil-frame-1.png" id="2_i6xea"]
+[ext_resource type="Texture2D" uid="uid://c5t5bsgimggmr" path="res://player_mateo_sprites/pixil-frame-5.png" id="2_ysbo0"]
+[ext_resource type="Texture2D" uid="uid://cytesjck50ho" path="res://player_mateo_sprites/1pixil-frame-0.png" id="3_k8g5n"]
+[ext_resource type="Texture2D" uid="uid://4fcrio2kkym4" path="res://player_mateo_sprites/pixil-frame-6.png" id="3_komoo"]
+[ext_resource type="Texture2D" uid="uid://db6ftmhgoaa30" path="res://player_mateo_sprites/pixil-frame-7.png" id="4_lrqo5"]
+[ext_resource type="Texture2D" uid="uid://c0r3p8s35u4em" path="res://player_mateo_sprites/1pixil-frame-5.png" id="4_ukn1o"]
+[ext_resource type="Texture2D" uid="uid://fr8lo5thpt6y" path="res://player_mateo_sprites/1pixil-frame-6.png" id="5_llhyi"]
+[ext_resource type="Texture2D" uid="uid://c177hrl4imc80" path="res://player_mateo_sprites/1pixil-frame-7.png" id="6_35v25"]
+[ext_resource type="Texture2D" uid="uid://b0qewgc7l8d1s" path="res://player_mateo_sprites/pixil-frame-3.png" id="6_bhmvq"]
+[ext_resource type="Texture2D" uid="uid://cbyubtevjxy8n" path="res://player_mateo_sprites/pixil-frame-0.png" id="6_geyr6"]
 [ext_resource type="Texture2D" uid="uid://itbdhabo1c0o" path="res://camilo_movimiento.png" id="7_86tmh"]
-[ext_resource type="Texture2D" uid="uid://bbep30d1klmts" path="res://pixil-frame-1.png" id="7_wq7pm"]
+[ext_resource type="Texture2D" uid="uid://nrvdkb6o126a" path="res://player_mateo_sprites/pixil-frame-4.png" id="7_gte8m"]
+[ext_resource type="Texture2D" uid="uid://d0jj6rrd44wi5" path="res://player_mateo_sprites/1pixil-frame-2.png" id="7_h38ep"]
+[ext_resource type="Texture2D" uid="uid://bp3tumqlmp1w8" path="res://player_mateo_sprites/pixil-frame-1.png" id="7_wq7pm"]
+[ext_resource type="Texture2D" uid="uid://dgch4112reqhq" path="res://player_mateo_sprites/1pixil-frame-3.png" id="8_h64ob"]
 [ext_resource type="Texture2D" uid="uid://dw04jkvu8gvtb" path="res://camilo-animation-removebg-preview.png" id="8_onmdk"]
+[ext_resource type="Texture2D" uid="uid://cth1njgxafy87" path="res://player_mateo_sprites/1pixil-frame-4.png" id="9_hq5l0"]
+[ext_resource type="Texture2D" uid="uid://y816vyx1piq2" path="res://pixil-frame-0.png" id="10_c6mjs"]
 [ext_resource type="Script" path="res://countdown_timer.gd" id="10_kic5y"]
+[ext_resource type="Texture2D" uid="uid://bbep30d1klmts" path="res://pixil-frame-1.png" id="11_pgc6l"]
 [ext_resource type="Texture2D" uid="uid://buyxgxl46e82q" path="res://fish.png" id="12_0sh0w"]
 [ext_resource type="Script" path="res://player2.gd" id="12_57008"]
 [ext_resource type="Script" path="res://fish_2d.gd" id="12_dtinx"]
 [ext_resource type="Texture2D" uid="uid://cjxffmj2woyty" path="res://tortuga.png" id="13_3lkkg"]
 [ext_resource type="Script" path="res://countdown_timer_2.gd" id="14_rkqqs"]
+[ext_resource type="Texture2D" uid="uid://ch2wmt8wnvgao" path="res://parallax_assets/parallax-00.png" id="27_k4mdw"]
+[ext_resource type="Texture2D" uid="uid://bfs0xtl5ud16k" path="res://parallax_assets/parallax-01.png" id="28_fwms5"]
+[ext_resource type="Texture2D" uid="uid://dhool22ocxdth" path="res://parallax_assets/parallax-02.png" id="29_gaiyy"]
+[ext_resource type="Texture2D" uid="uid://dleic35unu3k6" path="res://parallax_assets/parallax-03.png" id="30_sj88d"]
+[ext_resource type="Texture2D" uid="uid://bgoinh4ipxgs3" path="res://parallax_assets/parallax-04.png" id="31_nak4k"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_u1qc1"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_n11kr"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_wdjis")
+"texture": ExtResource("6_geyr6")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_j8xal")
+"texture": ExtResource("7_wq7pm")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ysbo0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_komoo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_lrqo5")
 }],
 "loop": true,
 "name": &"up",
@@ -30,10 +61,13 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_uh78a")
+"texture": ExtResource("6_bhmvq")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_udfu1")
+"texture": ExtResource("7_gte8m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_gte8m")
 }],
 "loop": true,
 "name": &"walk",
@@ -48,10 +82,10 @@ height = 70.0
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("6_geyr6")
+"texture": ExtResource("10_c6mjs")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_wq7pm")
+"texture": ExtResource("11_pgc6l")
 }],
 "loop": true,
 "name": &"walk",
@@ -157,6 +191,48 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pgkjv"]
 size = Vector2(50, 78)
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_u1qc1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_i6xea")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_k8g5n")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_ukn1o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_llhyi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_35v25")
+}],
+"loop": true,
+"name": &"up",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_h38ep")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_h64ob")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_hq5l0")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 6.0
+}]
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_nb1hw"]
 animations = [{
 "frames": [{
@@ -178,9 +254,7 @@ position = Vector2(137, 56)
 script = ExtResource("1_5q1o8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
-scale = Vector2(0.5, 0.5)
-sprite_frames = SubResource("SpriteFrames_u1qc1")
-animation = &"walk"
+sprite_frames = SubResource("SpriteFrames_n11kr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 shape = SubResource("CapsuleShape2D_2xa6m")
@@ -200,8 +274,7 @@ shape = SubResource("CircleShape2D_m8lh8")
 position = Vector2(73, 2.38419e-07)
 scale = Vector2(0.383, 0.398)
 sprite_frames = SubResource("SpriteFrames_qnwav")
-animation = &"Run"
-frame_progress = 0.386544
+animation = &"Default"
 
 [node name="CollisionShape2D-Camilo" type="CollisionShape2D" parent="Player"]
 position = Vector2(78, -3)
@@ -247,7 +320,7 @@ offset_right = -373.0
 offset_bottom = 332.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_color = Color(0.988235, 0.243137, 0, 1)
+theme_override_colors/font_color = Color(0.256871, 0.634534, 0.560577, 1)
 theme_override_font_sizes/font_size = 80
 text = "P1: 0"
 
@@ -256,9 +329,7 @@ position = Vector2(1030, 54)
 script = ExtResource("12_57008")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player2"]
-scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_u1qc1")
-animation = &"walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player2"]
 shape = SubResource("CapsuleShape2D_2xa6m")
@@ -304,15 +375,52 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 346.0
-offset_top = 215.0
-offset_right = 664.0
-offset_bottom = 325.0
+offset_left = 377.0
+offset_top = 219.0
+offset_right = 571.0
+offset_bottom = 329.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_color = Color(0.988235, 0.243137, 0, 1)
+theme_override_colors/font_color = Color(0.720315, 0.357075, 0.951541, 1)
 theme_override_font_sizes/font_size = 80
 text = "P2: 0"
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="Parallax2D" type="Parallax2D" parent="ParallaxBackground"]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Parallax2D"]
+position = Vector2(587, 342)
+scale = Vector2(1, 2.32222)
+texture = ExtResource("27_k4mdw")
+
+[node name="Parallax2D2" type="Parallax2D" parent="ParallaxBackground"]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Parallax2D2"]
+position = Vector2(587, 342)
+scale = Vector2(1, 2.32222)
+texture = ExtResource("28_fwms5")
+
+[node name="Parallax2D3" type="Parallax2D" parent="ParallaxBackground"]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Parallax2D3"]
+position = Vector2(587, 342)
+scale = Vector2(1, 2.32222)
+texture = ExtResource("29_gaiyy")
+
+[node name="Parallax2D4" type="Parallax2D" parent="ParallaxBackground"]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Parallax2D4"]
+position = Vector2(577.5, 327)
+scale = Vector2(0.800694, 1.79444)
+texture = ExtResource("30_sj88d")
+
+[node name="Parallax2D5" type="Parallax2D" parent="ParallaxBackground"]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Parallax2D5"]
+position = Vector2(621, 653.245)
+scale = Vector2(0.952778, 1.10642)
+texture = ExtResource("31_nak4k")
 
 [connection signal="body_entered" from="Player" to="Player" method="_on_body_entered"]
 [connection signal="body_entered" from="Player2" to="Player2" method="_on_body_entered"]
