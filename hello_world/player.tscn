@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://dfg448gfmftsx"]
+[gd_scene load_steps=50 format=3 uid="uid://dfg448gfmftsx"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_5q1o8"]
 [ext_resource type="Texture2D" uid="uid://dfuplo7f1x747" path="res://player_mateo_sprites/1pixil-frame-1.png" id="2_i6xea"]
@@ -26,6 +26,11 @@
 [ext_resource type="Script" path="res://fish_2d.gd" id="12_dtinx"]
 [ext_resource type="Texture2D" uid="uid://cjxffmj2woyty" path="res://tortuga.png" id="13_3lkkg"]
 [ext_resource type="Script" path="res://countdown_timer_2.gd" id="14_rkqqs"]
+[ext_resource type="Texture2D" uid="uid://ch2wmt8wnvgao" path="res://parallax_assets/parallax-00.png" id="27_k4mdw"]
+[ext_resource type="Texture2D" uid="uid://bfs0xtl5ud16k" path="res://parallax_assets/parallax-01.png" id="28_fwms5"]
+[ext_resource type="Texture2D" uid="uid://dhool22ocxdth" path="res://parallax_assets/parallax-02.png" id="29_gaiyy"]
+[ext_resource type="Texture2D" uid="uid://dleic35unu3k6" path="res://parallax_assets/parallax-03.png" id="30_sj88d"]
+[ext_resource type="Texture2D" uid="uid://bgoinh4ipxgs3" path="res://parallax_assets/parallax-04.png" id="31_nak4k"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_n11kr"]
 animations = [{
@@ -379,6 +384,43 @@ grow_vertical = 2
 theme_override_colors/font_color = Color(0.720315, 0.357075, 0.951541, 1)
 theme_override_font_sizes/font_size = 80
 text = "P2: 0"
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="Parallax2D" type="Parallax2D" parent="ParallaxBackground"]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Parallax2D"]
+position = Vector2(587, 342)
+scale = Vector2(1, 2.32222)
+texture = ExtResource("27_k4mdw")
+
+[node name="Parallax2D2" type="Parallax2D" parent="ParallaxBackground"]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Parallax2D2"]
+position = Vector2(587, 342)
+scale = Vector2(1, 2.32222)
+texture = ExtResource("28_fwms5")
+
+[node name="Parallax2D3" type="Parallax2D" parent="ParallaxBackground"]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Parallax2D3"]
+position = Vector2(587, 342)
+scale = Vector2(1, 2.32222)
+texture = ExtResource("29_gaiyy")
+
+[node name="Parallax2D4" type="Parallax2D" parent="ParallaxBackground"]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Parallax2D4"]
+position = Vector2(577.5, 327)
+scale = Vector2(0.800694, 1.79444)
+texture = ExtResource("30_sj88d")
+
+[node name="Parallax2D5" type="Parallax2D" parent="ParallaxBackground"]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Parallax2D5"]
+position = Vector2(621, 653.245)
+scale = Vector2(0.952778, 1.10642)
+texture = ExtResource("31_nak4k")
 
 [connection signal="body_entered" from="Player" to="Player" method="_on_body_entered"]
 [connection signal="body_entered" from="Player2" to="Player2" method="_on_body_entered"]
