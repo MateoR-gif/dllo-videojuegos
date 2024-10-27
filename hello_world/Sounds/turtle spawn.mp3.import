@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b2sq8fdgbkijd"
+path="res://.godot/imported/turtle spawn.mp3-04179c093c4216fce9394d791eeb9e8b.mp3str"
+
+[deps]
+
+source_file="res://Sounds/turtle spawn.mp3"
+dest_files=["res://.godot/imported/turtle spawn.mp3-04179c093c4216fce9394d791eeb9e8b.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
