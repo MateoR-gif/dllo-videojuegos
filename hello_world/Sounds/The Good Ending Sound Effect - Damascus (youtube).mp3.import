@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bjs4st7qjnjha"
+path="res://.godot/imported/The Good Ending Sound Effect - Damascus (youtube).mp3-d02f87168b6346c0e7abcce988c20929.mp3str"
+
+[deps]
+
+source_file="res://Sounds/The Good Ending Sound Effect - Damascus (youtube).mp3"
+dest_files=["res://.godot/imported/The Good Ending Sound Effect - Damascus (youtube).mp3-d02f87168b6346c0e7abcce988c20929.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

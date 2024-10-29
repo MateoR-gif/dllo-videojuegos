@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=3 uid="uid://dfg448gfmftsx"]
+[gd_scene load_steps=68 format=3 uid="uid://dfg448gfmftsx"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_5q1o8"]
 [ext_resource type="Texture2D" uid="uid://dfuplo7f1x747" path="res://player_mateo_sprites/1pixil-frame-1.png" id="2_i6xea"]
@@ -33,6 +33,9 @@
 [ext_resource type="Texture2D" uid="uid://desnmuj3nm54v" path="res://bunny_run-Sheet_7.png" id="15_2qcfn"]
 [ext_resource type="Texture2D" uid="uid://cb17q14pp213k" path="res://bunny_run-Sheet_8.png" id="16_l3fnv"]
 [ext_resource type="AudioStream" uid="uid://bwpw00m0btj3h" path="res://Sounds/ES_Fishing, Sinker, Tackle, Hit Water, Plop 01 - Epidemic Sound.mp3" id="20_uvk5v"]
+[ext_resource type="AudioStream" uid="uid://widcw3tchphp" path="res://Sounds/🌟 [EFECTO DE SONIDO] BRILLO brillante ▪ shiny glitter sound effect ✨ - Time to Sound Effects (youtube).mp3" id="22_5gfr3"]
+[ext_resource type="AudioStream" uid="uid://tv6wcjoaig2a" path="res://Sounds/Time’s Running Out - Frankie-Ann Lovejoy (youtube).mp3" id="22_hexed"]
+[ext_resource type="AudioStream" uid="uid://bjs4st7qjnjha" path="res://Sounds/The Good Ending Sound Effect - Damascus (youtube).mp3" id="23_eb4wi"]
 [ext_resource type="Texture2D" uid="uid://ch2wmt8wnvgao" path="res://parallax_assets/parallax-00.png" id="27_k4mdw"]
 [ext_resource type="Texture2D" uid="uid://bfs0xtl5ud16k" path="res://parallax_assets/parallax-01.png" id="28_fwms5"]
 [ext_resource type="Texture2D" uid="uid://dhool22ocxdth" path="res://parallax_assets/parallax-02.png" id="29_gaiyy"]
@@ -466,6 +469,15 @@ offset_top = 74.0
 offset_right = 545.0
 offset_bottom = 97.0
 
+[node name="time_running_out" type="AudioStreamPlayer2D" parent="Player/CountdownTimer"]
+stream = ExtResource("22_hexed")
+
+[node name="time_out" type="AudioStreamPlayer2D" parent="Player/CountdownTimer"]
+stream = ExtResource("23_eb4wi")
+
+[node name="sonido_caminar" type="AudioStreamPlayer2D" parent="Player"]
+stream = ExtResource("22_5gfr3")
+
 [node name="Player2" type="Area2D" parent="."]
 position = Vector2(1030, 54)
 script = ExtResource("12_57008")
@@ -543,6 +555,10 @@ root_node = NodePath("../Collectable2D")
 libraries = {
 "": SubResource("AnimationLibrary_5tn80")
 }
+
+[node name="sonido_caminar" type="AudioStreamPlayer2D" parent="Player2"]
+stream = ExtResource("22_5gfr3")
+playback_type = 1
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 

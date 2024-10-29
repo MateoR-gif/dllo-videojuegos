@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://tv6wcjoaig2a"
+path="res://.godot/imported/Time’s Running Out - Frankie-Ann Lovejoy (youtube).mp3-c586b2d7125d6e2ff901ca828e20dd69.mp3str"
+
+[deps]
+
+source_file="res://Sounds/Time’s Running Out - Frankie-Ann Lovejoy (youtube).mp3"
+dest_files=["res://.godot/imported/Time’s Running Out - Frankie-Ann Lovejoy (youtube).mp3-c586b2d7125d6e2ff901ca828e20dd69.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

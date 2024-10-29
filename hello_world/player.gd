@@ -1,12 +1,16 @@
 extends Area2D
 signal hit
 
+# Referencia al nodo de sonido
+@onready var sonido_caminar = $sonido_caminar
+
 @export var speed = 500
 var time = 20
 var screen_size
 var sprite_size
 var umbral = 100
 var score = 0
+
 
 
 
@@ -30,7 +34,8 @@ func _process(delta):
 	var tableScore = get_node("CountdownTimer")
 	var timer = get_node("CountdownTimer/Timer")
 	var timer2 = $"../Player2/CountdownTimer2/Timer"
-
+	
+	
 	var collectable = true
 	var velocity = Vector2.ZERO
 	var distancia = position.distance_to(fish.position)
@@ -74,10 +79,13 @@ func _process(delta):
 
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * speed
+		if not sonido_caminar.playing:
+			sonido_caminar.play()
 		$AnimatedSprite2D.play()
 		$'AnimatedSprite2D-Mariel'.play()
 		$"AnimatedSprite2D-Camilo".play()
 	else:
+		sonido_caminar.stop()
 		$AnimatedSprite2D.play("default")
 		$"AnimatedSprite2D-Mariel".play("new_animation")
 		$"AnimatedSprite2D-Camilo".play("Walk")

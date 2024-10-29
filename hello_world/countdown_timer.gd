@@ -4,7 +4,8 @@ extends Node
 @onready var loseLabel = $"Label-lose1"
 @onready var timer = $Timer
 @onready var addTimeLabel = $"Label"
-
+@onready var sound_time_running_out = $time_running_out
+@onready var sound_time_out = $time_out
 
 func _ready():
 	timer.start()
@@ -27,9 +28,14 @@ func _process(delta):
 		
 		if timer.time_left <= 10:
 			countdownLabel.add_theme_color_override("font_color", Color(1, 0, 0))
+			if not sound_time_running_out.playing:
+				sound_time_running_out.play()
 		else:
-			countdownLabel.add_theme_color_override("font_color", Color(1, 1, 1)) 
+			countdownLabel.add_theme_color_override("font_color", Color(1, 1, 1))
+
 	else:
-		countdownLabel.visible = false
+		countdownLabel.text = "Se acabó el tiempo"
 		get_tree().paused = true
+			
+			
 		

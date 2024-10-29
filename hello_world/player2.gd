@@ -1,6 +1,9 @@
 extends Area2D
 signal hit
 
+# Referencia al nodo de sonido
+@onready var sonido_caminar = $sonido_caminar
+
 @export var speed = 500
 var time = 20
 var screen_size
@@ -10,7 +13,6 @@ var score = 0
 
 func _ready():
 	# hide() # Oculta el personaje
-
 	screen_size = get_viewport_rect().size # Almacena el tamaño de la pantalla
 	sprite_size = $AnimatedSprite2D # Obtiene el tamaño del sprite
 
@@ -24,6 +26,7 @@ func _ready():
 
 
 func _process(delta):
+	
 	var collectable = get_node("Collectable/Collectable2D")
 	var scoreTable = get_node("CountdownTimer2")
 	var timer = get_node("CountdownTimer2/Timer")
@@ -63,6 +66,8 @@ func _process(delta):
 
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * speed
+		if not sonido_caminar.playing:
+			sonido_caminar.play()
 		$AnimatedSprite2D.play()
 		$'AnimatedSprite2D-Mariel'.play()
 		$"AnimatedSprite2D-Camilo".play()
