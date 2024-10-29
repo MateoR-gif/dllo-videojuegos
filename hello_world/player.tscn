@@ -1,24 +1,24 @@
-[gd_scene load_steps=65 format=3 uid="uid://dfg448gfmftsx"]
+[gd_scene load_steps=66 format=3 uid="uid://dfg448gfmftsx"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_5q1o8"]
-[ext_resource type="Texture2D" uid="uid://dfuplo7f1x747" path="res://player_mateo_sprites/1pixil-frame-1.png" id="2_i6xea"]
-[ext_resource type="Texture2D" uid="uid://c5t5bsgimggmr" path="res://player_mateo_sprites/pixil-frame-5.png" id="2_ysbo0"]
-[ext_resource type="Texture2D" uid="uid://cytesjck50ho" path="res://player_mateo_sprites/1pixil-frame-0.png" id="3_k8g5n"]
-[ext_resource type="Texture2D" uid="uid://4fcrio2kkym4" path="res://player_mateo_sprites/pixil-frame-6.png" id="3_komoo"]
-[ext_resource type="Texture2D" uid="uid://db6ftmhgoaa30" path="res://player_mateo_sprites/pixil-frame-7.png" id="4_lrqo5"]
-[ext_resource type="Texture2D" uid="uid://c0r3p8s35u4em" path="res://player_mateo_sprites/1pixil-frame-5.png" id="4_ukn1o"]
-[ext_resource type="Texture2D" uid="uid://fr8lo5thpt6y" path="res://player_mateo_sprites/1pixil-frame-6.png" id="5_llhyi"]
-[ext_resource type="Texture2D" uid="uid://c177hrl4imc80" path="res://player_mateo_sprites/1pixil-frame-7.png" id="6_35v25"]
-[ext_resource type="Texture2D" uid="uid://b0qewgc7l8d1s" path="res://player_mateo_sprites/pixil-frame-3.png" id="6_bhmvq"]
-[ext_resource type="Texture2D" uid="uid://cbyubtevjxy8n" path="res://player_mateo_sprites/pixil-frame-0.png" id="6_geyr6"]
+[ext_resource type="Texture2D" uid="uid://dfuplo7f1x747" path="res://Sounds/player_mateo_sprites/1pixil-frame-1.png" id="2_i6xea"]
+[ext_resource type="Texture2D" uid="uid://c5t5bsgimggmr" path="res://Sounds/player_mateo_sprites/pixil-frame-5.png" id="2_ysbo0"]
+[ext_resource type="Texture2D" uid="uid://cytesjck50ho" path="res://Sounds/player_mateo_sprites/1pixil-frame-0.png" id="3_k8g5n"]
+[ext_resource type="Texture2D" uid="uid://4fcrio2kkym4" path="res://Sounds/player_mateo_sprites/pixil-frame-6.png" id="3_komoo"]
+[ext_resource type="Texture2D" uid="uid://db6ftmhgoaa30" path="res://Sounds/player_mateo_sprites/pixil-frame-7.png" id="4_lrqo5"]
+[ext_resource type="Texture2D" uid="uid://c0r3p8s35u4em" path="res://Sounds/player_mateo_sprites/1pixil-frame-5.png" id="4_ukn1o"]
+[ext_resource type="Texture2D" uid="uid://fr8lo5thpt6y" path="res://Sounds/player_mateo_sprites/1pixil-frame-6.png" id="5_llhyi"]
+[ext_resource type="Texture2D" uid="uid://c177hrl4imc80" path="res://Sounds/player_mateo_sprites/1pixil-frame-7.png" id="6_35v25"]
+[ext_resource type="Texture2D" uid="uid://b0qewgc7l8d1s" path="res://Sounds/player_mateo_sprites/pixil-frame-3.png" id="6_bhmvq"]
+[ext_resource type="Texture2D" uid="uid://cbyubtevjxy8n" path="res://Sounds/player_mateo_sprites/pixil-frame-0.png" id="6_geyr6"]
 [ext_resource type="Texture2D" uid="uid://itbdhabo1c0o" path="res://camilo_movimiento.png" id="7_86tmh"]
-[ext_resource type="Texture2D" uid="uid://nrvdkb6o126a" path="res://player_mateo_sprites/pixil-frame-4.png" id="7_gte8m"]
-[ext_resource type="Texture2D" uid="uid://d0jj6rrd44wi5" path="res://player_mateo_sprites/1pixil-frame-2.png" id="7_h38ep"]
-[ext_resource type="Texture2D" uid="uid://bp3tumqlmp1w8" path="res://player_mateo_sprites/pixil-frame-1.png" id="7_wq7pm"]
-[ext_resource type="Texture2D" uid="uid://dgch4112reqhq" path="res://player_mateo_sprites/1pixil-frame-3.png" id="8_h64ob"]
+[ext_resource type="Texture2D" uid="uid://nrvdkb6o126a" path="res://Sounds/player_mateo_sprites/pixil-frame-4.png" id="7_gte8m"]
+[ext_resource type="Texture2D" uid="uid://d0jj6rrd44wi5" path="res://Sounds/player_mateo_sprites/1pixil-frame-2.png" id="7_h38ep"]
+[ext_resource type="Texture2D" uid="uid://bp3tumqlmp1w8" path="res://Sounds/player_mateo_sprites/pixil-frame-1.png" id="7_wq7pm"]
+[ext_resource type="Texture2D" uid="uid://dgch4112reqhq" path="res://Sounds/player_mateo_sprites/1pixil-frame-3.png" id="8_h64ob"]
 [ext_resource type="Texture2D" uid="uid://dw04jkvu8gvtb" path="res://camilo-animation-removebg-preview.png" id="8_onmdk"]
 [ext_resource type="Texture2D" uid="uid://dp3yg7rne1lta" path="res://bunny_run-Sheet_1.png" id="9_4s8xx"]
-[ext_resource type="Texture2D" uid="uid://cth1njgxafy87" path="res://player_mateo_sprites/1pixil-frame-4.png" id="9_hq5l0"]
+[ext_resource type="Texture2D" uid="uid://cth1njgxafy87" path="res://Sounds/player_mateo_sprites/1pixil-frame-4.png" id="9_hq5l0"]
 [ext_resource type="Script" path="res://countdown_timer.gd" id="10_kic5y"]
 [ext_resource type="Texture2D" uid="uid://cm5g074xccfhi" path="res://bunny_run-Sheet_2.png" id="10_pbvdt"]
 [ext_resource type="Texture2D" uid="uid://duya6goo6r4x" path="res://bunny_run-Sheet_3.png" id="11_i14kw"]
@@ -40,6 +40,7 @@
 [ext_resource type="Texture2D" uid="uid://dleic35unu3k6" path="res://parallax_assets/parallax-03.png" id="30_sj88d"]
 [ext_resource type="Texture2D" uid="uid://bgoinh4ipxgs3" path="res://parallax_assets/parallax-04.png" id="31_nak4k"]
 [ext_resource type="AudioStream" uid="uid://b2sq8fdgbkijd" path="res://Sounds/turtle spawn.mp3" id="35_b1wnf"]
+[ext_resource type="AudioStream" uid="uid://c1uq6ueijgy0p" path="res://Sounds/Medieval_Music.mp3" id="41_0a1yq"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_n11kr"]
 animations = [{
@@ -581,6 +582,10 @@ texture = ExtResource("30_sj88d")
 position = Vector2(557, 355)
 scale = Vector2(0.952778, 1.10642)
 texture = ExtResource("31_nak4k")
+
+[node name="AmbientSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("41_0a1yq")
+autoplay = true
 
 [connection signal="body_entered" from="Player" to="Player" method="_on_body_entered"]
 [connection signal="body_entered" from="Player2" to="Player2" method="_on_body_entered"]

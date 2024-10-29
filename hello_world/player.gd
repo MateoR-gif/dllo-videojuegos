@@ -12,7 +12,7 @@ var score = 0
 
 func _ready():
 	# hide() # Oculta el personaje
-
+	
 	screen_size = get_viewport_rect().size # Almacena el tamaño de la pantalla
 	sprite_size = $AnimatedSprite2D # Obtiene el tamaño del sprite
 
