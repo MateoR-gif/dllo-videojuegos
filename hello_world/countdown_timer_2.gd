@@ -2,7 +2,7 @@ extends Node
 
 @onready var loseLabel = $"Label-lose2"
 @onready var timer = $Timer
-
+var player2
 
 func _ready():
 	timer.start()
@@ -10,7 +10,7 @@ func _ready():
 func setScore():
 	var padre = get_parent()
 	var abuelo = padre.get_parent()
-	var player2 = abuelo.get_node("Player2")
+	player2 = abuelo.get_node("Player2")
 	loseLabel.text = "P2: " + str(player2.score)
 	
 func time_left_to_live():
@@ -22,5 +22,6 @@ func time_left_to_live():
 func _process(delta):
 	if timer.time_left > 0:
 		pass
-	else:	
+	else:
+		GlobalData.final_score_2 = player2.score
 		loseLabel.visible = true

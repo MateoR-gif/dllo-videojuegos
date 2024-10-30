@@ -1,6 +1,7 @@
-[gd_scene load_steps=69 format=3 uid="uid://dfg448gfmftsx"]
+[gd_scene load_steps=70 format=3 uid="uid://dfg448gfmftsx"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_5q1o8"]
+[ext_resource type="Script" path="res://global_data.gd" id="1_37x0b"]
 [ext_resource type="Texture2D" uid="uid://dfuplo7f1x747" path="res://player_mateo_sprites/1pixil-frame-1.png" id="2_i6xea"]
 [ext_resource type="Texture2D" uid="uid://c5t5bsgimggmr" path="res://player_mateo_sprites/pixil-frame-5.png" id="2_ysbo0"]
 [ext_resource type="Texture2D" uid="uid://cytesjck50ho" path="res://player_mateo_sprites/1pixil-frame-0.png" id="3_k8g5n"]
@@ -375,6 +376,7 @@ _data = {
 }
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_37x0b")
 
 [node name="Player" type="Area2D" parent="."]
 position = Vector2(137, 56)

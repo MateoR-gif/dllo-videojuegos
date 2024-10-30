@@ -34,10 +34,10 @@ texture = ExtResource("2_eb1if")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 0
-offset_left = 271.336
-offset_top = 75.7326
-offset_right = 341.336
-offset_bottom = 176.733
+offset_left = 279.833
+offset_top = 144.345
+offset_right = 349.833
+offset_bottom = 245.345
 scale = Vector2(2.0625, 1.72449)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
@@ -61,6 +61,18 @@ text = "Quit"
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_7xcpg")
 autoplay = true
+
+[node name="Label" type="Label" parent="."]
+modulate = Color(0.866667, 0.423529, 0.403922, 1)
+layout_mode = 0
+offset_left = 39.4559
+offset_top = -69.2597
+offset_right = 691.456
+offset_bottom = 203.74
+theme_override_font_sizes/font_size = 120
+text = "HYRAX"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]

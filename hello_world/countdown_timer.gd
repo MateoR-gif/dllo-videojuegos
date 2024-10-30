@@ -6,14 +6,17 @@ extends Node
 @onready var addTimeLabel = $"Label"
 @onready var sound_time_running_out = $time_running_out
 @onready var sound_time_out = $time_out
+var player
+
 
 func _ready():
+	var padre = get_parent()
+	var abuelo = padre.get_parent()
+	player = abuelo.get_node("Player")
 	timer.start()
 
 func setScore():
-	var padre = get_parent()
-	var abuelo = padre.get_parent()
-	var player = abuelo.get_node("Player")
+	
 	loseLabel.text = "P1: " + str(player.score)
 
 func time_left_to_live():
@@ -34,6 +37,7 @@ func _process(delta):
 			countdownLabel.add_theme_color_override("font_color", Color(1, 1, 1))
 
 	else:
+		GlobalData.final_score = player.score
 		countdownLabel.text = "Se acabó el tiempo"
 		get_tree().change_scene_to_file("res://game_over.tscn")
 		
