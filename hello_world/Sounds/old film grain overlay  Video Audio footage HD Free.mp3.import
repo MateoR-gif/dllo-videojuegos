@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://buxy7kttfpm5f"
+path="res://.godot/imported/old film grain overlay  Video Audio footage HD Free.mp3-c062a6265dcb165e0b6f2906b00e18e5.mp3str"
+
+[deps]
+
+source_file="res://Sounds/old film grain overlay  Video Audio footage HD Free.mp3"
+dest_files=["res://.godot/imported/old film grain overlay  Video Audio footage HD Free.mp3-c062a6265dcb165e0b6f2906b00e18e5.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

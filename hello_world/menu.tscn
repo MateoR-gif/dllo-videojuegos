@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dkj6aif8gkrgo"]
+[gd_scene load_steps=4 format=3 uid="uid://dkj6aif8gkrgo"]
 
 [ext_resource type="Script" path="res://menu.gd" id="1_txkru"]
 [ext_resource type="Texture2D" uid="uid://ch2wmt8wnvgao" path="res://parallax_assets/parallax-00.png" id="2_eb1if"]
+[ext_resource type="AudioStream" uid="uid://buuj2cg5w436h" path="res://Sounds/menu_sound.mp3" id="3_7xcpg"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -24,10 +25,10 @@ anchor_left = 0.181
 anchor_top = 0.336
 anchor_right = 0.181
 anchor_bottom = 0.336
-offset_left = 7673.58
-offset_top = 10664.5
-offset_right = 9113.58
-offset_bottom = 11024.5
+offset_left = 7876.3
+offset_top = 10845.1
+offset_right = 9316.3
+offset_bottom = 11205.1
 scale = Vector2(-2.04014e+09, -2.48914e+06)
 texture = ExtResource("2_eb1if")
 
@@ -56,6 +57,10 @@ text = "Options"
 modulate = Color(0.388679, 1, 0.956225, 1)
 layout_mode = 2
 text = "Quit"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_7xcpg")
+autoplay = true
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]

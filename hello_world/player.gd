@@ -11,9 +11,6 @@ var sprite_size
 var umbral = 100
 var score = 0
 
-
-
-
 func _ready():
 	# hide() # Oculta el personaje
 
@@ -47,7 +44,6 @@ func _process(delta):
 		tableScore.setScore()
 		var num = randf_range(0,1)
 		timer.start(timer.time_left + num)
-		$CountdownTimer/Label.text = "+ " + str(num)
 
 	if Input.is_action_pressed("move_right"):
 		velocity.x += 1

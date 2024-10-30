@@ -1,0 +1,50 @@
+[gd_scene load_steps=4 format=3 uid="uid://bw8u8od4xdsst"]
+
+[ext_resource type="Script" path="res://game_over.gd" id="1_1u1mr"]
+[ext_resource type="Texture2D" uid="uid://ch2wmt8wnvgao" path="res://parallax_assets/parallax-00.png" id="1_3n8jf"]
+[ext_resource type="AudioStream" uid="uid://bgjtwbld1wi7k" path="res://Sounds/Recortado.mp3" id="3_20iti"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1u1mr")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -314.0
+offset_top = -64.0
+offset_right = 2027.0
+offset_bottom = 1083.0
+texture = ExtResource("1_3n8jf")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_20iti")
+autoplay = true
+
+[node name="Label" type="Label" parent="."]
+modulate = Color(1, 0.239216, 1, 1)
+self_modulate = Color(1, 0.192157, 1, 1)
+layout_mode = 0
+offset_left = -1.0
+offset_top = 141.0
+offset_right = 1146.0
+offset_bottom = 414.0
+theme_override_font_sizes/font_size = 150
+text = "GAME OVER"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+modulate = Color(1, 0.184314, 1, 1)
+layout_mode = 0
+offset_left = 490.0
+offset_top = 429.0
+offset_right = 677.0
+offset_bottom = 485.0
+text = "RESTART"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

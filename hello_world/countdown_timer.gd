@@ -35,7 +35,12 @@ func _process(delta):
 
 	else:
 		countdownLabel.text = "Se acabó el tiempo"
-		get_tree().paused = true
+		get_tree().change_scene_to_file("res://game_over.tscn")
+		
 			
 			
 		
+
+
+func _on_button_pressed():
+	pass # Replace with function body.

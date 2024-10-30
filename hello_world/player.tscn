@@ -1,4 +1,4 @@
-[gd_scene load_steps=68 format=3 uid="uid://dfg448gfmftsx"]
+[gd_scene load_steps=69 format=3 uid="uid://dfg448gfmftsx"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_5q1o8"]
 [ext_resource type="Texture2D" uid="uid://dfuplo7f1x747" path="res://player_mateo_sprites/1pixil-frame-1.png" id="2_i6xea"]
@@ -43,6 +43,7 @@
 [ext_resource type="Texture2D" uid="uid://dleic35unu3k6" path="res://parallax_assets/parallax-03.png" id="30_sj88d"]
 [ext_resource type="Texture2D" uid="uid://bgoinh4ipxgs3" path="res://parallax_assets/parallax-04.png" id="31_nak4k"]
 [ext_resource type="AudioStream" uid="uid://b2sq8fdgbkijd" path="res://Sounds/turtle spawn.mp3" id="35_b1wnf"]
+[ext_resource type="AudioStream" uid="uid://d10d1c2wbyflr" path="res://Sounds/Medieval Music – Cobblestone Village.mp3" id="44_t5j5u"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_n11kr"]
 animations = [{
@@ -431,7 +432,7 @@ libraries = {
 script = ExtResource("10_kic5y")
 
 [node name="Timer" type="Timer" parent="Player/CountdownTimer"]
-wait_time = 15.0
+wait_time = 25.0
 one_shot = true
 
 [node name="Label-countdown" type="Label" parent="Player/CountdownTimer"]
@@ -471,12 +472,14 @@ offset_bottom = 97.0
 
 [node name="time_running_out" type="AudioStreamPlayer2D" parent="Player/CountdownTimer"]
 stream = ExtResource("22_hexed")
+volume_db = -13.732
 
 [node name="time_out" type="AudioStreamPlayer2D" parent="Player/CountdownTimer"]
 stream = ExtResource("23_eb4wi")
 
 [node name="sonido_caminar" type="AudioStreamPlayer2D" parent="Player"]
 stream = ExtResource("22_5gfr3")
+volume_db = -10.896
 
 [node name="Player2" type="Area2D" parent="."]
 position = Vector2(1030, 54)
@@ -558,11 +561,18 @@ libraries = {
 
 [node name="sonido_caminar" type="AudioStreamPlayer2D" parent="Player2"]
 stream = ExtResource("22_5gfr3")
-playback_type = 1
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="Parallax2D" type="Parallax2D" parent="ParallaxBackground"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+editor_description = ""
+script = null
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Parallax2D"]
 position = Vector2(642, 364)
@@ -571,6 +581,14 @@ scale = Vector2(1, 2.32222)
 texture = ExtResource("27_k4mdw")
 
 [node name="Parallax2D2" type="Parallax2D" parent="ParallaxBackground"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+editor_description = ""
+script = null
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Parallax2D2"]
 position = Vector2(640, 331)
@@ -578,6 +596,14 @@ scale = Vector2(1, 2.32222)
 texture = ExtResource("28_fwms5")
 
 [node name="Parallax2D3" type="Parallax2D" parent="ParallaxBackground"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+editor_description = ""
+script = null
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Parallax2D3"]
 position = Vector2(650, 371)
@@ -585,6 +611,14 @@ scale = Vector2(1, 2.32222)
 texture = ExtResource("29_gaiyy")
 
 [node name="Parallax2D4" type="Parallax2D" parent="ParallaxBackground"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+editor_description = ""
+script = null
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Parallax2D4"]
 position = Vector2(357, 304)
@@ -592,11 +626,24 @@ scale = Vector2(0.800694, 1.79444)
 texture = ExtResource("30_sj88d")
 
 [node name="Parallax2D5" type="Parallax2D" parent="ParallaxBackground"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+editor_description = ""
+script = null
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Parallax2D5"]
-position = Vector2(557, 355)
-scale = Vector2(0.952778, 1.10642)
+position = Vector2(557, 376.378)
+scale = Vector2(0.952778, 1.18993)
 texture = ExtResource("31_nak4k")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("44_t5j5u")
+volume_db = -20.613
+autoplay = true
 
 [connection signal="body_entered" from="Player" to="Player" method="_on_body_entered"]
 [connection signal="body_entered" from="Player2" to="Player2" method="_on_body_entered"]
