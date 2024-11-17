@@ -1,9 +1,10 @@
-[gd_scene load_steps=70 format=3 uid="uid://dfg448gfmftsx"]
+[gd_scene load_steps=77 format=3 uid="uid://dfg448gfmftsx"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_5q1o8"]
 [ext_resource type="Script" path="res://global_data.gd" id="1_37x0b"]
 [ext_resource type="Texture2D" uid="uid://dfuplo7f1x747" path="res://player_mateo_sprites/1pixil-frame-1.png" id="2_i6xea"]
 [ext_resource type="Texture2D" uid="uid://c5t5bsgimggmr" path="res://player_mateo_sprites/pixil-frame-5.png" id="2_ysbo0"]
+[ext_resource type="Texture2D" uid="uid://dy402d1cal8a" path="res://player_mateo_sprites/pixil-frame-0 (1).png" id="3_83efh"]
 [ext_resource type="Texture2D" uid="uid://cytesjck50ho" path="res://player_mateo_sprites/1pixil-frame-0.png" id="3_k8g5n"]
 [ext_resource type="Texture2D" uid="uid://4fcrio2kkym4" path="res://player_mateo_sprites/pixil-frame-6.png" id="3_komoo"]
 [ext_resource type="Texture2D" uid="uid://db6ftmhgoaa30" path="res://player_mateo_sprites/pixil-frame-7.png" id="4_lrqo5"]
@@ -16,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://nrvdkb6o126a" path="res://player_mateo_sprites/pixil-frame-4.png" id="7_gte8m"]
 [ext_resource type="Texture2D" uid="uid://d0jj6rrd44wi5" path="res://player_mateo_sprites/1pixil-frame-2.png" id="7_h38ep"]
 [ext_resource type="Texture2D" uid="uid://bp3tumqlmp1w8" path="res://player_mateo_sprites/pixil-frame-1.png" id="7_wq7pm"]
+[ext_resource type="Texture2D" uid="uid://bcy10gutfrgal" path="res://player_mateo_sprites/pixil-frame-2.png" id="8_86hqs"]
 [ext_resource type="Texture2D" uid="uid://dgch4112reqhq" path="res://player_mateo_sprites/1pixil-frame-3.png" id="8_h64ob"]
 [ext_resource type="Texture2D" uid="uid://dw04jkvu8gvtb" path="res://camilo-animation-removebg-preview.png" id="8_onmdk"]
 [ext_resource type="Texture2D" uid="uid://dp3yg7rne1lta" path="res://bunny_run-Sheet_1.png" id="9_4s8xx"]
@@ -44,7 +46,11 @@
 [ext_resource type="Texture2D" uid="uid://dleic35unu3k6" path="res://parallax_assets/parallax-03.png" id="30_sj88d"]
 [ext_resource type="Texture2D" uid="uid://bgoinh4ipxgs3" path="res://parallax_assets/parallax-04.png" id="31_nak4k"]
 [ext_resource type="AudioStream" uid="uid://b2sq8fdgbkijd" path="res://Sounds/turtle spawn.mp3" id="35_b1wnf"]
+[ext_resource type="Script" path="res://banana.gd" id="40_cq3r0"]
+[ext_resource type="Script" path="res://countdown_timer_3.gd" id="42_tasj5"]
 [ext_resource type="AudioStream" uid="uid://d10d1c2wbyflr" path="res://Sounds/Medieval Music – Cobblestone Village.mp3" id="44_t5j5u"]
+[ext_resource type="Script" path="res://player_3.gd" id="46_6oxuy"]
+[ext_resource type="Texture2D" uid="uid://dchf0vcrkvvlq" path="res://banana.png" id="49_7eb78"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_n11kr"]
 animations = [{
@@ -75,10 +81,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("6_bhmvq")
+"texture": ExtResource("8_86hqs")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_gte8m")
+"texture": ExtResource("6_bhmvq")
 }, {
 "duration": 1.0,
 "texture": ExtResource("7_gte8m")
@@ -242,7 +248,7 @@ length = 0.001
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Fish2D:rotation")
+tracks/0/path = NodePath("Banana:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -257,7 +263,7 @@ length = 0.5
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Fish2D:rotation")
+tracks/0/path = NodePath("Banana:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -375,6 +381,33 @@ _data = {
 "pickup": SubResource("Animation_f2c3u")
 }
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_dxrbh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_83efh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_83efh")
+}],
+"loop": true,
+"name": &"up",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_83efh")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_37x0b")
 
@@ -384,6 +417,7 @@ script = ExtResource("1_5q1o8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
 sprite_frames = SubResource("SpriteFrames_n11kr")
+animation = &"up"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 shape = SubResource("CapsuleShape2D_2xa6m")
@@ -567,14 +601,6 @@ stream = ExtResource("22_5gfr3")
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="Parallax2D" type="Parallax2D" parent="ParallaxBackground"]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-editor_description = ""
-script = null
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Parallax2D"]
 position = Vector2(642, 364)
@@ -583,14 +609,6 @@ scale = Vector2(1, 2.32222)
 texture = ExtResource("27_k4mdw")
 
 [node name="Parallax2D2" type="Parallax2D" parent="ParallaxBackground"]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-editor_description = ""
-script = null
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Parallax2D2"]
 position = Vector2(640, 331)
@@ -598,14 +616,6 @@ scale = Vector2(1, 2.32222)
 texture = ExtResource("28_fwms5")
 
 [node name="Parallax2D3" type="Parallax2D" parent="ParallaxBackground"]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-editor_description = ""
-script = null
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Parallax2D3"]
 position = Vector2(650, 371)
@@ -613,14 +623,6 @@ scale = Vector2(1, 2.32222)
 texture = ExtResource("29_gaiyy")
 
 [node name="Parallax2D4" type="Parallax2D" parent="ParallaxBackground"]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-editor_description = ""
-script = null
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Parallax2D4"]
 position = Vector2(357, 304)
@@ -628,14 +630,6 @@ scale = Vector2(0.800694, 1.79444)
 texture = ExtResource("30_sj88d")
 
 [node name="Parallax2D5" type="Parallax2D" parent="ParallaxBackground"]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-editor_description = ""
-script = null
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Parallax2D5"]
 position = Vector2(557, 376.378)
@@ -647,5 +641,65 @@ stream = ExtResource("44_t5j5u")
 volume_db = -20.613
 autoplay = true
 
+[node name="Player3" type="Area2D" parent="."]
+position = Vector2(137, 56)
+script = ExtResource("46_6oxuy")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player3"]
+sprite_frames = SubResource("SpriteFrames_dxrbh")
+animation = &"up"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player3"]
+shape = SubResource("CapsuleShape2D_2xa6m")
+
+[node name="Collectable" type="Node" parent="Player3"]
+
+[node name="Banana" type="Sprite2D" parent="Player3/Collectable"]
+position = Vector2(216, 216)
+rotation = -0.00753355
+scale = Vector2(1.21, 1.15)
+texture = ExtResource("49_7eb78")
+script = ExtResource("40_cq3r0")
+
+[node name="spawn" type="AudioStreamPlayer2D" parent="Player3/Collectable/Banana"]
+position = Vector2(-177.163, -189.236)
+rotation = 0.00792659
+scale = Vector2(0.826449, 0.869563)
+skew = -0.000766635
+stream = ExtResource("20_uvk5v")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Player3/Collectable"]
+libraries = {
+"": SubResource("AnimationLibrary_08cnr")
+}
+
+[node name="sonido_caminar" type="AudioStreamPlayer2D" parent="Player3"]
+stream = ExtResource("22_5gfr3")
+volume_db = -10.896
+
+[node name="CountdownTimer3" type="Node" parent="Player3"]
+script = ExtResource("42_tasj5")
+
+[node name="Timer" type="Timer" parent="Player3/CountdownTimer3"]
+wait_time = 15.0
+one_shot = true
+
+[node name="Label-lose3" type="Label" parent="Player3/CountdownTimer3"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -88.0
+offset_top = 220.0
+offset_right = 106.0
+offset_bottom = 330.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.617393, 0.569616, 0.151393, 1)
+theme_override_font_sizes/font_size = 80
+text = "P3: 0"
+
 [connection signal="body_entered" from="Player" to="Player" method="_on_body_entered"]
 [connection signal="body_entered" from="Player2" to="Player2" method="_on_body_entered"]
+[connection signal="body_entered" from="Player3" to="Player3" method="_on_body_entered"]
