@@ -2,6 +2,7 @@ extends Node
 
 var final_score = 0
 var final_score_2 = 0
+var final_score_3 = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

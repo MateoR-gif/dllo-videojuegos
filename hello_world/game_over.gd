@@ -6,10 +6,12 @@ extends Control
 func _ready():
 	print(GlobalData.final_score)
 	print(GlobalData.final_score_2)
-	if GlobalData.final_score > GlobalData.final_score_2:
+	if GlobalData.final_score > GlobalData.final_score_2 and GlobalData.final_score > GlobalData.final_score_3:
 		ganador.text = "¡Jugador P1 ganó"
-	elif GlobalData.final_score < GlobalData.final_score_2:
+	elif GlobalData.final_score_2 > GlobalData.final_score and GlobalData.final_score_2 > GlobalData.final_score_3:
 		ganador.text = "¡Jugador P2 ganó!"
+	elif GlobalData.final_score_3 > GlobalData.final_score and GlobalData.final_score_3 > GlobalData.final_score_2:
+		ganador.text = "¡La máquina ganó!"
 	else:
 		ganador.text = "¡Empate!"
 
