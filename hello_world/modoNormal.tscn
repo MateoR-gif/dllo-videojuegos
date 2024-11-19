@@ -1,0 +1,613 @@
+[gd_scene load_steps=71 format=3 uid="uid://dvwslclxknpmi"]
+
+[ext_resource type="Script" path="res://global_data.gd" id="1_o6qvh"]
+[ext_resource type="Script" path="res://player.gd" id="2_trcq4"]
+[ext_resource type="Texture2D" uid="uid://cbyubtevjxy8n" path="res://player_mateo_sprites/pixil-frame-0.png" id="3_bqh8s"]
+[ext_resource type="Texture2D" uid="uid://bp3tumqlmp1w8" path="res://player_mateo_sprites/pixil-frame-1.png" id="4_culx1"]
+[ext_resource type="Texture2D" uid="uid://c5t5bsgimggmr" path="res://player_mateo_sprites/pixil-frame-5.png" id="5_cixrf"]
+[ext_resource type="Texture2D" uid="uid://4fcrio2kkym4" path="res://player_mateo_sprites/pixil-frame-6.png" id="6_y1x7s"]
+[ext_resource type="Texture2D" uid="uid://db6ftmhgoaa30" path="res://player_mateo_sprites/pixil-frame-7.png" id="7_bodjf"]
+[ext_resource type="Texture2D" uid="uid://bcy10gutfrgal" path="res://player_mateo_sprites/pixil-frame-2.png" id="8_2pjso"]
+[ext_resource type="Texture2D" uid="uid://b0qewgc7l8d1s" path="res://player_mateo_sprites/pixil-frame-3.png" id="9_xcxec"]
+[ext_resource type="Texture2D" uid="uid://nrvdkb6o126a" path="res://player_mateo_sprites/pixil-frame-4.png" id="10_ssj3a"]
+[ext_resource type="Texture2D" uid="uid://dp3yg7rne1lta" path="res://bunny_run-Sheet_1.png" id="11_e7r1b"]
+[ext_resource type="Texture2D" uid="uid://cm5g074xccfhi" path="res://bunny_run-Sheet_2.png" id="12_caj0k"]
+[ext_resource type="Texture2D" uid="uid://duya6goo6r4x" path="res://bunny_run-Sheet_3.png" id="13_yl0md"]
+[ext_resource type="Texture2D" uid="uid://csm3ua16lfdvl" path="res://bunny_run-Sheet_4.png" id="14_y7ksf"]
+[ext_resource type="Texture2D" uid="uid://d07dy0eg78vlm" path="res://bunny_run-Sheet_5.png" id="15_kaf1b"]
+[ext_resource type="Texture2D" uid="uid://dnvudr6xpy6n5" path="res://bunny_run-Sheet_6.png" id="16_uushn"]
+[ext_resource type="Texture2D" uid="uid://desnmuj3nm54v" path="res://bunny_run-Sheet_7.png" id="17_r0y8t"]
+[ext_resource type="Texture2D" uid="uid://cb17q14pp213k" path="res://bunny_run-Sheet_8.png" id="18_yi4c5"]
+[ext_resource type="Texture2D" uid="uid://dw04jkvu8gvtb" path="res://camilo-animation-removebg-preview.png" id="19_srh4k"]
+[ext_resource type="Texture2D" uid="uid://buyxgxl46e82q" path="res://fish.png" id="20_p7nq4"]
+[ext_resource type="Script" path="res://fish_2d.gd" id="21_vfwqw"]
+[ext_resource type="AudioStream" uid="uid://bwpw00m0btj3h" path="res://Sounds/ES_Fishing, Sinker, Tackle, Hit Water, Plop 01 - Epidemic Sound.mp3" id="22_1yajm"]
+[ext_resource type="Script" path="res://countdown_timer.gd" id="23_8im3j"]
+[ext_resource type="AudioStream" uid="uid://tv6wcjoaig2a" path="res://Sounds/Time’s Running Out - Frankie-Ann Lovejoy (youtube).mp3" id="24_rj3ck"]
+[ext_resource type="AudioStream" uid="uid://bjs4st7qjnjha" path="res://Sounds/The Good Ending Sound Effect - Damascus (youtube).mp3" id="25_3xote"]
+[ext_resource type="AudioStream" uid="uid://widcw3tchphp" path="res://Sounds/🌟 [EFECTO DE SONIDO] BRILLO brillante ▪ shiny glitter sound effect ✨ - Time to Sound Effects (youtube).mp3" id="26_uqjbv"]
+[ext_resource type="Script" path="res://player2.gd" id="27_vq7lq"]
+[ext_resource type="Texture2D" uid="uid://dfuplo7f1x747" path="res://player_mateo_sprites/1pixil-frame-1.png" id="28_70e38"]
+[ext_resource type="Texture2D" uid="uid://cytesjck50ho" path="res://player_mateo_sprites/1pixil-frame-0.png" id="29_1uo75"]
+[ext_resource type="Texture2D" uid="uid://c0r3p8s35u4em" path="res://player_mateo_sprites/1pixil-frame-5.png" id="30_qwy3s"]
+[ext_resource type="Texture2D" uid="uid://fr8lo5thpt6y" path="res://player_mateo_sprites/1pixil-frame-6.png" id="31_ulmrc"]
+[ext_resource type="Texture2D" uid="uid://c177hrl4imc80" path="res://player_mateo_sprites/1pixil-frame-7.png" id="32_grv3c"]
+[ext_resource type="Texture2D" uid="uid://d0jj6rrd44wi5" path="res://player_mateo_sprites/1pixil-frame-2.png" id="33_ual4x"]
+[ext_resource type="Texture2D" uid="uid://dgch4112reqhq" path="res://player_mateo_sprites/1pixil-frame-3.png" id="34_cukia"]
+[ext_resource type="Texture2D" uid="uid://cth1njgxafy87" path="res://player_mateo_sprites/1pixil-frame-4.png" id="35_x1wjl"]
+[ext_resource type="Texture2D" uid="uid://6gadu4ralcil" path="res://camilo_quieto.png" id="36_657eg"]
+[ext_resource type="Texture2D" uid="uid://itbdhabo1c0o" path="res://camilo_movimiento.png" id="37_csdyk"]
+[ext_resource type="Script" path="res://countdown_timer_2.gd" id="38_dkjfx"]
+[ext_resource type="Texture2D" uid="uid://cjxffmj2woyty" path="res://tortuga.png" id="39_ru8d0"]
+[ext_resource type="AudioStream" uid="uid://b2sq8fdgbkijd" path="res://Sounds/turtle spawn.mp3" id="40_6dexg"]
+[ext_resource type="Texture2D" uid="uid://ch2wmt8wnvgao" path="res://parallax_assets/parallax-00.png" id="41_elwmt"]
+[ext_resource type="Texture2D" uid="uid://bfs0xtl5ud16k" path="res://parallax_assets/parallax-01.png" id="42_4o05w"]
+[ext_resource type="Texture2D" uid="uid://dhool22ocxdth" path="res://parallax_assets/parallax-02.png" id="43_cfkdu"]
+[ext_resource type="Texture2D" uid="uid://dleic35unu3k6" path="res://parallax_assets/parallax-03.png" id="44_5dafx"]
+[ext_resource type="Texture2D" uid="uid://bgoinh4ipxgs3" path="res://parallax_assets/parallax-04.png" id="45_bo0wf"]
+[ext_resource type="AudioStream" uid="uid://d10d1c2wbyflr" path="res://Sounds/Medieval Music – Cobblestone Village.mp3" id="46_5plo1"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_n11kr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_bqh8s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_culx1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_cixrf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_y1x7s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_bodjf")
+}],
+"loop": true,
+"name": &"up",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_2pjso")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_xcxec")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_ssj3a")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2xa6m"]
+radius = 27.0
+height = 70.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g6eji"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_e7r1b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_caj0k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_yl0md")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_e7r1b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_caj0k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_yl0md")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_y7ksf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_kaf1b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_uushn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_r0y8t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_yi4c5")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_m8lh8"]
+radius = 49.0918
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fllpl"]
+atlas = ExtResource("19_srh4k")
+region = Rect2(0, 0, 166, 250)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a7j4v"]
+atlas = ExtResource("19_srh4k")
+region = Rect2(0, 0, 166, 250)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7truo"]
+atlas = ExtResource("19_srh4k")
+region = Rect2(166, 0, 166, 250)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dxu2f"]
+atlas = ExtResource("19_srh4k")
+region = Rect2(166, 250, 166, 250)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aakkc"]
+atlas = ExtResource("19_srh4k")
+region = Rect2(166, 0, 166, 250)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bgdgi"]
+atlas = ExtResource("19_srh4k")
+region = Rect2(332, 0, 166, 250)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ua260"]
+atlas = ExtResource("19_srh4k")
+region = Rect2(166, 250, 166, 250)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ffw4y"]
+atlas = ExtResource("19_srh4k")
+region = Rect2(0, 250, 166, 250)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ijtm0"]
+atlas = ExtResource("19_srh4k")
+region = Rect2(0, 0, 166, 250)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s7rr6"]
+atlas = ExtResource("19_srh4k")
+region = Rect2(166, 0, 166, 250)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qnwav"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fllpl")
+}],
+"loop": true,
+"name": &"Default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a7j4v")
+}, {
+"duration": 5.0,
+"texture": SubResource("AtlasTexture_7truo")
+}, {
+"duration": 5.0,
+"texture": SubResource("AtlasTexture_dxu2f")
+}],
+"loop": true,
+"name": &"Run",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aakkc")
+}, {
+"duration": 3.0,
+"texture": SubResource("AtlasTexture_bgdgi")
+}, {
+"duration": 3.0,
+"texture": SubResource("AtlasTexture_ua260")
+}, {
+"duration": 3.0,
+"texture": SubResource("AtlasTexture_ffw4y")
+}],
+"loop": true,
+"name": &"Up",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 3.0,
+"texture": SubResource("AtlasTexture_ijtm0")
+}, {
+"duration": 3.0,
+"texture": SubResource("AtlasTexture_s7rr6")
+}],
+"loop": true,
+"name": &"Walk",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pgkjv"]
+size = Vector2(50, 78)
+
+[sub_resource type="Animation" id="Animation_ru7rp"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Banana:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-0.00753355, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_4r65i"]
+resource_name = "pickup"
+length = 0.5
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Banana:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(-0.0164058, -0.25, 0, 0.25, 0, 3.14462, -0.25, 0, 0.25, 0, 6.27458, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.233333, 0.466667)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_08cnr"]
+_data = {
+"RESET": SubResource("Animation_ru7rp"),
+"pickup": SubResource("Animation_4r65i")
+}
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u1qc1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("28_70e38")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_1uo75")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("30_qwy3s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_ulmrc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_grv3c")
+}],
+"loop": true,
+"name": &"up",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("33_ual4x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_cukia")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_x1wjl")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 6.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nb1hw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("36_657eg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_csdyk")
+}],
+"loop": true,
+"name": &"camiloquieto",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("37_csdyk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_csdyk")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_w008u"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0146379]
+}
+
+[sub_resource type="Animation" id="Animation_f2c3u"]
+resource_name = "new_animation"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.966667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-0.00984275, 6.28319]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5tn80"]
+_data = {
+"RESET": SubResource("Animation_w008u"),
+"pickup": SubResource("Animation_f2c3u")
+}
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_o6qvh")
+
+[node name="Player" type="Area2D" parent="."]
+position = Vector2(137, 56)
+script = ExtResource("2_trcq4")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
+sprite_frames = SubResource("SpriteFrames_n11kr")
+animation = &"up"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+shape = SubResource("CapsuleShape2D_2xa6m")
+
+[node name="AnimatedSprite2D-Mariel" type="AnimatedSprite2D" parent="Player"]
+position = Vector2(-79, 6)
+scale = Vector2(0.158594, 0.276389)
+sprite_frames = SubResource("SpriteFrames_g6eji")
+animation = &"walk"
+flip_h = true
+
+[node name="CollisionShape2D-Mariel" type="CollisionShape2D" parent="Player"]
+position = Vector2(-80, -1)
+shape = SubResource("CircleShape2D_m8lh8")
+
+[node name="AnimatedSprite2D-Camilo" type="AnimatedSprite2D" parent="Player"]
+position = Vector2(73, 2.38419e-07)
+scale = Vector2(0.383, 0.398)
+sprite_frames = SubResource("SpriteFrames_qnwav")
+animation = &"Default"
+
+[node name="CollisionShape2D-Camilo" type="CollisionShape2D" parent="Player"]
+position = Vector2(78, -3)
+shape = SubResource("RectangleShape2D_pgkjv")
+
+[node name="Collectable" type="Node" parent="Player"]
+
+[node name="Fish2D" type="Sprite2D" parent="Player/Collectable"]
+position = Vector2(216, 216)
+rotation = -0.00753355
+scale = Vector2(1.21, 1.15)
+texture = ExtResource("20_p7nq4")
+script = ExtResource("21_vfwqw")
+
+[node name="spawn" type="AudioStreamPlayer2D" parent="Player/Collectable/Fish2D"]
+position = Vector2(-177.163, -189.236)
+rotation = 0.00792659
+scale = Vector2(0.826449, 0.869563)
+skew = -0.000766635
+stream = ExtResource("22_1yajm")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Player/Collectable"]
+libraries = {
+"": SubResource("AnimationLibrary_08cnr")
+}
+
+[node name="CountdownTimer" type="Node" parent="Player"]
+script = ExtResource("23_8im3j")
+
+[node name="Timer" type="Timer" parent="Player/CountdownTimer"]
+wait_time = 25.0
+one_shot = true
+
+[node name="Label-countdown" type="Label" parent="Player/CountdownTimer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -51.0
+offset_right = 51.0
+offset_bottom = 55.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 40
+text = "00:00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label-lose1" type="Label" parent="Player/CountdownTimer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -556.0
+offset_top = 222.0
+offset_right = -373.0
+offset_bottom = 332.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.256871, 0.634534, 0.560577, 1)
+theme_override_font_sizes/font_size = 80
+text = "P1: 0"
+
+[node name="Label" type="Label" parent="Player/CountdownTimer"]
+offset_left = 505.0
+offset_top = 74.0
+offset_right = 545.0
+offset_bottom = 97.0
+
+[node name="time_running_out" type="AudioStreamPlayer2D" parent="Player/CountdownTimer"]
+stream = ExtResource("24_rj3ck")
+volume_db = -13.732
+
+[node name="time_out" type="AudioStreamPlayer2D" parent="Player/CountdownTimer"]
+stream = ExtResource("25_3xote")
+
+[node name="sonido_caminar" type="AudioStreamPlayer2D" parent="Player"]
+stream = ExtResource("26_uqjbv")
+volume_db = -10.896
+
+[node name="Player2" type="Area2D" parent="."]
+position = Vector2(1030, 54)
+script = ExtResource("27_vq7lq")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player2"]
+sprite_frames = SubResource("SpriteFrames_u1qc1")
+animation = &"walk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player2"]
+shape = SubResource("CapsuleShape2D_2xa6m")
+
+[node name="AnimatedSprite2D-Mariel" type="AnimatedSprite2D" parent="Player2"]
+position = Vector2(-83, 8)
+scale = Vector2(0.148828, 0.348958)
+sprite_frames = SubResource("SpriteFrames_g6eji")
+animation = &"new_animation"
+flip_h = true
+
+[node name="CollisionShape2D-Mariel" type="CollisionShape2D" parent="Player2"]
+position = Vector2(-83, 8)
+shape = SubResource("CircleShape2D_m8lh8")
+
+[node name="AnimatedSprite2D-Camilo" type="AnimatedSprite2D" parent="Player2"]
+position = Vector2(79, -6)
+scale = Vector2(0.0368, 0.0381)
+sprite_frames = SubResource("SpriteFrames_nb1hw")
+animation = &"camiloquieto"
+
+[node name="CollisionShape2D-Camilo" type="CollisionShape2D" parent="Player2"]
+position = Vector2(78, -3)
+shape = SubResource("RectangleShape2D_pgkjv")
+
+[node name="CountdownTimer2" type="Node" parent="Player2"]
+script = ExtResource("38_dkjfx")
+
+[node name="Timer" type="Timer" parent="Player2/CountdownTimer2"]
+wait_time = 15.0
+one_shot = true
+
+[node name="Label-lose2" type="Label" parent="Player2/CountdownTimer2"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 377.0
+offset_top = 219.0
+offset_right = 571.0
+offset_bottom = 329.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.720315, 0.357075, 0.951541, 1)
+theme_override_font_sizes/font_size = 80
+text = "P2: 0"
+
+[node name="Collectable" type="Node" parent="Player2"]
+
+[node name="Collectable2D" type="Sprite2D" parent="Player2/Collectable"]
+position = Vector2(454, 105.5)
+rotation = 0.0146379
+scale = Vector2(1.11182, 1.19899)
+texture = ExtResource("39_ru8d0")
+offset = Vector2(1.79883, -4.5872)
+script = ExtResource("21_vfwqw")
+
+[node name="spawn" type="AudioStreamPlayer2D" parent="Player2/Collectable/Collectable2D"]
+position = Vector2(-177.163, -189.236)
+rotation = 0.00792659
+scale = Vector2(0.826449, 0.869563)
+skew = -0.000766635
+stream = ExtResource("40_6dexg")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Player2/Collectable"]
+root_node = NodePath("../Collectable2D")
+libraries = {
+"": SubResource("AnimationLibrary_5tn80")
+}
+
+[node name="sonido_caminar" type="AudioStreamPlayer2D" parent="Player2"]
+stream = ExtResource("26_uqjbv")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="Parallax2D" type="Parallax2D" parent="ParallaxBackground"]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Parallax2D"]
+position = Vector2(642, 364)
+rotation = 0.000885115
+scale = Vector2(1, 2.32222)
+texture = ExtResource("41_elwmt")
+
+[node name="Parallax2D2" type="Parallax2D" parent="ParallaxBackground"]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Parallax2D2"]
+position = Vector2(640, 331)
+scale = Vector2(1, 2.32222)
+texture = ExtResource("42_4o05w")
+
+[node name="Parallax2D3" type="Parallax2D" parent="ParallaxBackground"]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Parallax2D3"]
+position = Vector2(650, 371)
+scale = Vector2(1, 2.32222)
+texture = ExtResource("43_cfkdu")
+
+[node name="Parallax2D4" type="Parallax2D" parent="ParallaxBackground"]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Parallax2D4"]
+position = Vector2(357, 304)
+scale = Vector2(0.800694, 1.79444)
+texture = ExtResource("44_5dafx")
+
+[node name="Parallax2D5" type="Parallax2D" parent="ParallaxBackground"]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Parallax2D5"]
+position = Vector2(557, 376.378)
+scale = Vector2(0.952778, 1.18993)
+texture = ExtResource("45_bo0wf")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("46_5plo1")
+volume_db = -20.613
+autoplay = true
+
+[connection signal="body_entered" from="Player" to="Player" method="_on_body_entered"]
+[connection signal="body_entered" from="Player2" to="Player2" method="_on_body_entered"]
