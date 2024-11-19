@@ -1,4 +1,4 @@
-[gd_scene load_steps=77 format=3 uid="uid://dvwslclxknpmi"]
+[gd_scene load_steps=71 format=3 uid="uid://dvwslclxknpmi"]
 
 [ext_resource type="Script" path="res://global_data.gd" id="1_o6qvh"]
 [ext_resource type="Script" path="res://player.gd" id="2_trcq4"]
@@ -46,11 +46,6 @@
 [ext_resource type="Texture2D" uid="uid://dleic35unu3k6" path="res://parallax_assets/parallax-03.png" id="44_5dafx"]
 [ext_resource type="Texture2D" uid="uid://bgoinh4ipxgs3" path="res://parallax_assets/parallax-04.png" id="45_bo0wf"]
 [ext_resource type="AudioStream" uid="uid://d10d1c2wbyflr" path="res://Sounds/Medieval Music – Cobblestone Village.mp3" id="46_5plo1"]
-[ext_resource type="Script" path="res://player_3.gd" id="47_0qwxl"]
-[ext_resource type="Texture2D" uid="uid://dy402d1cal8a" path="res://player_mateo_sprites/pixil-frame-0 (1).png" id="48_o08fk"]
-[ext_resource type="Texture2D" uid="uid://dchf0vcrkvvlq" path="res://banana.png" id="49_qh05q"]
-[ext_resource type="Script" path="res://banana.gd" id="50_2nc8o"]
-[ext_resource type="Script" path="res://countdown_timer_3.gd" id="51_tlixo"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_fbg14"]
 animations = [{
@@ -381,33 +376,6 @@ _data = {
 "pickup": SubResource("Animation_f2c3u")
 }
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_dxrbh"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("48_o08fk")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("48_o08fk")
-}],
-"loop": true,
-"name": &"up",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("48_o08fk")
-}],
-"loop": true,
-"name": &"walk",
-"speed": 5.0
-}]
-
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_o6qvh")
 
@@ -641,65 +609,5 @@ stream = ExtResource("46_5plo1")
 volume_db = -20.613
 autoplay = true
 
-[node name="Player3" type="Area2D" parent="."]
-position = Vector2(137, 56)
-script = ExtResource("47_0qwxl")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player3"]
-sprite_frames = SubResource("SpriteFrames_dxrbh")
-animation = &"up"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player3"]
-shape = SubResource("CapsuleShape2D_vdop0")
-
-[node name="Collectable" type="Node" parent="Player3"]
-
-[node name="Banana" type="Sprite2D" parent="Player3/Collectable"]
-position = Vector2(216, 216)
-rotation = -0.00753355
-scale = Vector2(1.21, 1.15)
-texture = ExtResource("49_qh05q")
-script = ExtResource("50_2nc8o")
-
-[node name="spawn" type="AudioStreamPlayer2D" parent="Player3/Collectable/Banana"]
-position = Vector2(-177.163, -189.236)
-rotation = 0.00792659
-scale = Vector2(0.826449, 0.869563)
-skew = -0.000766635
-stream = ExtResource("22_1yajm")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Player3/Collectable"]
-libraries = {
-"": SubResource("AnimationLibrary_08cnr")
-}
-
-[node name="sonido_caminar" type="AudioStreamPlayer2D" parent="Player3"]
-stream = ExtResource("26_uqjbv")
-volume_db = -10.896
-
-[node name="CountdownTimer3" type="Node" parent="Player3"]
-script = ExtResource("51_tlixo")
-
-[node name="Timer" type="Timer" parent="Player3/CountdownTimer3"]
-wait_time = 15.0
-one_shot = true
-
-[node name="Label-lose3" type="Label" parent="Player3/CountdownTimer3"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -88.0
-offset_top = 220.0
-offset_right = 106.0
-offset_bottom = 330.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.617393, 0.569616, 0.151393, 1)
-theme_override_font_sizes/font_size = 80
-text = "P3: 0"
-
 [connection signal="body_entered" from="Player" to="Player" method="_on_body_entered"]
 [connection signal="body_entered" from="Player2" to="Player2" method="_on_body_entered"]
-[connection signal="body_entered" from="Player3" to="Player3" method="_on_body_entered"]
