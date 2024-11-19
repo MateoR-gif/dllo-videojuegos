@@ -23,5 +23,8 @@ func _process(delta):
 	if timer.time_left > 0:
 		pass
 	else:
-		GlobalData.final_score_2 = player2.score
-		loseLabel.visible = true
+		if player2 != null:
+			GlobalData.final_score_2 = player2.score
+		else:
+			GlobalData.final_score_2 = 0
+			loseLabel.visible = true
